@@ -41457,7 +41457,7 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-table-alt-custom-color-4 tr:nth-child(even)
         {
             color: #111111;
-            background-color: #c1c1c1;
+            background-color: #d1d1d1;
         }
 
         .u-input.u-custom-color-4,
@@ -41745,7 +41745,7 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-border-custom-color-4.u-field-input.u-field-input,
         .u-separator-custom-color-4:after
         {
-            border-color: #c1c1c1;
+            border-color: #d1d1d1;
             stroke: #c1c1c1;
         }
 
@@ -42807,8 +42807,9 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-logo-image-1 {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
+    max-width: 130px;
 }
 @media (max-width: 1199px) {
   .u-header .u-menu-1 {
@@ -42889,6 +42890,46 @@ a.u-link.u-text-hover-grey-90:hover {
   }
 }
 
+.numeration_container {
+    margin: 0 auto;
+
+}
+
+.numeration_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.numeration_list_item {
+   list-style: none;
+}
+
+.numeration_list_item:first-child .numeration_list_item_link {
+    margin-left: 0;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.numeration_list_item:last-child .page-link {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+
+.numeration_list_item_link {
+    list-style: none;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #893f45;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+
+}
 
  /*begin-variables base-font-size*/
  html { font-size: 16px; }
