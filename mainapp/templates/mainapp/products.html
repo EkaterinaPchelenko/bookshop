@@ -32,13 +32,13 @@
                     <div class="u-carousel-inner u-gallery-inner" role="listbox">
                       <div class="u-active u-carousel-item u-gallery-item u-carousel-item-1">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded" src="images/90fc53c9.svg">
+                          <img class="u-back-image u-expanded" src="/static/vendor/img/products/default-image.jpg">
                         </div>
                         <div class="u-over-slide u-over-slide-1"></div>
                       </div>
                       <div class="u-carousel-item u-gallery-item u-carousel-item-2">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded" src="images/90fc53c9.svg">
+                          <img class="u-back-image u-expanded" src="/static/vendor/img/products/default-image.jpg">
                         </div>
                         <div class="u-over-slide u-over-slide-2"></div>
                       </div>
@@ -82,12 +82,12 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                   {% for product in products %}
                     <div class="u-container-style u-list-item u-repeater-item u-list-item-1">
                       <div class="u-container-layout u-similar-container u-container-layout-1">
-                        <img alt="" class="u-expanded-width-xl u-image u-image-default u-image-1" data-image-width="2000" data-image-height="1333" src={{product.url}} data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+                        <img alt="" class="u-expanded-width-xl u-image u-image-default u-image-1" data-image-width="2000" data-image-height="1333" src={{product.image}} data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
                         <h3 class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">
                           <a href="#">{{product.name}} </a>
                         </h3>
                         <p class="u-text u-text-2">{{product.author.name}}</p>
-                        <a class="u-active-none u-border-hover-palette-2-base u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-1"> {{product.price}} </a>
+                        <a class="u-active-none u-border-hover-palette-2-base u-border-none u-button-style u-hover-none u-none u-text-body-color u-btn-1"> {{product.price}} Руб</a>
                         <a href="https://nicepage.com/static-site-generator" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> ДОБАВИТЬ В КОРЗИНУ</a>
                       </div>
                     </div>
