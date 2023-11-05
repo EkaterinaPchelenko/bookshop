@@ -1,0 +1,43 @@
+[{
+    "model": "mainapp.author",
+    "pk": 1,
+    "fields": {
+      "name": "Автор1"
+    }
+  },
+  {
+    "model": "mainapp.author",
+    "pk": 2,
+    "fields": {
+      "name": "Автор2"
+    }
+  },
+  {
+    "model": "mainapp.author",
+    "pk": 3,
+    "fields": {
+      "name": "Автор3"
+    }
+  },
+  {
+    "model": "mainapp.author",
+    "pk": 4,
+    "fields": {
+      "name": "Автор4"
+    }
+  },
+  {
+    "model": "mainapp.author",
+    "pk": 5,
+    "fields": {
+      "name": "Автор5"
+    }
+  },
+  {
+    "model": "mainapp.author",
+    "pk": 6,
+    "fields": {
+      "name": "Автор6"
+    }
+  }
+  ]
