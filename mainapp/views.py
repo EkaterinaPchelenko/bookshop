@@ -4,7 +4,7 @@ from django.views.generic import DetailView
 from django.views.decorators.cache import cache_page, never_cache
 
 from django.conf import settings
-from mainapp.models import Product, ProductCategory
+from mainapp.models import Product, ProductCategory, ProductImage
 
 
 def index(request):
@@ -12,11 +12,14 @@ def index(request):
 
 
 def products(request):
+
+    books = Product.objects.all()
     context = {
         "title": "bookshop",
-        "products": Product.objects.all(),
+        "products": books,
         "categories": ProductCategory.objects.all(),
     }
+
     return render(request, 'mainapp/products.html', context)
 
 
@@ -40,6 +43,9 @@ class ProductDetail(DetailView):
         context = super().get_context_data()
 
         context['product'] = get_product(self.kwargs.get('pk'))
+        context['images'] = ProductImage.objects.filter(product_id=context['product'].id)
         context['categories'] = ProductCategory.objects.all()
+        context['im_len'] = len(context['images'])
+        context['first_im'] = context['images'][0]
         return context
 # Create your views here.

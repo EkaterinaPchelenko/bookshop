@@ -1,8 +1,9 @@
 [
   {"model": "mainapp.product",
     "pk": 1,
-    "fields": {"image": "/static/vendor/img/products/default-image.jpg",
+    "fields": {
    "name": "Книга1",
+      "image": "/static/vendor/img/products/default-image.jpg",
    "price": 6090.00,
    "description":  "Описание1",
     "quantity": 4,
@@ -10,8 +11,9 @@
       "author": 2}},
   {"model": "mainapp.product",
     "pk": 2,
-    "fields": {"image": "/static/vendor/img/products/default-image.jpg",
+    "fields": {
   "name": "Книга2",
+      "image": "/static/vendor/img/products/default-image.jpg",
   "price": 2725.00,
   "description": "Описание2",
       "quantity": 4,
@@ -19,7 +21,8 @@
       "author": 1}},
   {"model": "mainapp.product",
     "pk": 3,
-    "fields":{"image": "/static/vendor/img/products/default-image.jpg",
+    "fields":{
+      "image": "/static/vendor/img/products/default-image.jpg",
   "name": "Книга3",
   "price": 3390.00,
   "description": "Описание3",
@@ -28,7 +31,8 @@
       "author": 5}},
   {"model": "mainapp.product",
     "pk": 4,
-    "fields":{"image": "/static/vendor/img/products/default-image.jpg",
+    "fields":{
+  "image": "/static/vendor/img/products/default-image.jpg",
   "name": "Книга4",
   "price": 2340.00,
   "description": "Описание4",
@@ -37,7 +41,8 @@
       "author": 4}},
   {"model": "mainapp.product",
     "pk": 5,
-    "fields":{"image": "/static/vendor/img/products/default-image.jpg",
+    "fields":{
+  "image": "/static/vendor/img/products/default-image.jpg",
   "name": "Книга5",
   "price": 1590.00,
   "description": "Описание5",
@@ -46,7 +51,8 @@
       "author": 3}},
   {"model": "mainapp.product",
   "pk": 6,
-  "fields": {"image": "/static/vendor/img/products/default-image.jpg",
+  "fields": {
+  "image": "/static/vendor/img/products/default-image.jpg",
   "name": "Книга6",
   "price": 2890.00,
   "description": "Описание6",
