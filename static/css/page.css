@@ -1182,6 +1182,11 @@ a {
   margin: 0;
   -webkit-text-decoration-skip: objects;
 }
+
+.u-logo:focus {
+    outline:1px solid #6b4748;
+}
+
 .u-image.u-logo {
   display: table;
   white-space: nowrap;
@@ -7173,6 +7178,7 @@ ul.u-text li:last-child {
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 img.u-image,
 .u-video-poster {
@@ -7508,6 +7514,7 @@ section.u-image:not(.u-hover-box),
   .u-xl-mode .u-valign-bottom-xl {
     display: flex;
     flex-direction: column;
+    gap:20px;
   }
 }
 @media (min-width: 1200px) and (max-width: 1399px) {
@@ -14906,12 +14913,14 @@ div.u-video,
 .u-nav-item {
   position: relative;
 }
+
 .u-nav {
   display: inline-block;
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .u-nav-item {
   display: inline-block;
   position: relative;
@@ -14920,6 +14929,38 @@ div.u-video,
   margin: 0;
   height: 100%;
 }
+
+a:focus {
+    outline:none;
+    border: none;
+}
+
+.u-nav-item:focus {
+    outline:none;
+    border: none;
+}
+
+.u-nav-item:has(:focus-visible) {
+    outline:1px solid #6b4748;
+    outline-offset: 2px;
+    border: none;
+}
+
+h3:focus {
+    outline:none;
+    border: none;
+}
+
+h3:has(:focus-visible) {
+    outline:1px solid #6b4748;
+    outline-offset: 2px;
+    border: none;
+}
+
+h3:hover {
+    text-decoration:underline;
+}
+
 .u-nav-popup .u-nav-item {
   height: auto;
 }
@@ -42361,6 +42402,7 @@ a.u-link.u-text-hover-grey-90:hover {
         line-height: 1.2;
         margin-top: 20px;
         margin-bottom: 20px;
+        color: #4d3334;
         }
         h4
         {
@@ -42811,6 +42853,8 @@ a.u-link.u-text-hover-grey-90:hover {
     width: 100%;
     height: 100%;
     max-width: 120px;
+    object-fit: cover;
+    object-position: center;
 }
 @media (max-width: 1199px) {
   .u-header .u-menu-1 {
@@ -42933,6 +42977,20 @@ a.u-link.u-text-hover-grey-90:hover {
 
 }
 
+.numeration_list_item_link:hover {
+    color: #4d3334;
+    border-bottom: 1px solid #4d3334;
+    border-top: 1px solid #4d3334;
+}
+
+.numeration_list_item_link:focus {
+    color: #4d3334;
+    outline: 1px solid #4d3334;
+}
+
+.u-btn:focus{
+    outline: 1px solid #2e1f1f;
+}
  /*begin-variables base-font-size*/
  html { font-size: 16px; }
  /*end-variables base-font-size*/

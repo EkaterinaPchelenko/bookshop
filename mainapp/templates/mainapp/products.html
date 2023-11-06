@@ -80,7 +80,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
             <div class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-list-1">
               <div class="u-repeater u-repeater-1">
                   {% for product in products %}
-                    <div class="u-container-style u-list-item u-repeater-item u-list-item-1">
+                    <div class="u-container-style u-list-item u-repeater-item u-list-item-1 product_list_item">
                       <div class="u-container-layout u-similar-container u-container-layout-1">
                         <img alt="" class="u-expanded-width-xl u-image u-image-default u-image-1" data-image-width="2000" data-image-height="1333" src={{product.image}} data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
                         <h3 class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">
@@ -88,7 +88,22 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                         </h3>
                         <p class="u-text u-text-2">{{product.author.name}}</p>
                         <a class="u-active-none u-border-hover-palette-2-base u-border-none u-button-style u-hover-none u-none u-text-body-color u-btn-1"> {{product.price}} Руб</a>
-                        <a href="https://nicepage.com/static-site-generator" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> ДОБАВИТЬ В КОРЗИНУ</a>
+                        <div class="busket_liked_container">
+                          <a href="https://nicepage.com/static-site-generator" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> ДОБАВИТЬ В КОРЗИНУ</a>
+                          <button class="button_liked_product" type="button">
+                            <svg width="25" height="20" viewBox="0 -1 22 20" fill="none">
+                              <path d="M16.749 0C13.875 0 12.676 2.75 11 2.75C9.324 2.75 8.12498 0 5.25098 0C2.52898 0 0 2.29099 0 5.38199C0 11.114 9.794 14.861 11 18C12.206 14.86 22 11.114 22 5.38199C22 2.29099 19.471 0 16.749 0Z" fill="#fff" stroke="#c70000" data-spm-anchor-id="a2g2w.detail.0.i3.263872f6fDcHOp">
+
+                              </path>
+                            </svg>
+<!--                            <svg width="25" height="20" viewBox="0 -1 22 20" fill="none">-->
+<!--                              <path d="M16.749 0C13.875 0 12.676 2.75 11 2.75C9.324 2.75 8.12498 0 5.25098 0C2.52898 0 0 2.29099 0 5.38199C0 11.114 9.794 14.861 11 18C12.206 14.86 22 11.114 22 5.38199C22 2.29099 19.471 0 16.749 0Z" fill="#c70000" stroke="#c70000" data-spm-anchor-id="a2g2w.detail.0.i3.263872f6fDcHOp">-->
+
+<!--                              </path>-->
+<!--                            </svg>-->
+
+                          </button>
+                        </div>
                       </div>
                     </div>
                   {% endfor %}
