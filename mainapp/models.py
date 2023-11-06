@@ -24,3 +24,8 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.name} | {self.category}'
+
+
+class ProductImage(models.Model):
+    image = models.ImageField(upload_to='product_images', blank=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)

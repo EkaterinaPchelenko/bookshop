@@ -1,6 +1,6 @@
 import json
 from django.core.management.base import BaseCommand
-from mainapp.models import ProductCategory, Product, Author
+from mainapp.models import ProductCategory, Product, Author, ProductImage
 from django.contrib.auth.models import User
 
 import json, os
@@ -46,3 +46,14 @@ class Command(BaseCommand):
             prod['category'] = _category
             new_product = Product(**prod)
             new_product.save()
+
+        images = load_from_json('mainapp/fixtures/product_images.json')
+
+        ProductImage.objects.all().delete()
+        for image in images:
+            im = image.get('fields')
+            product = im.get('product')
+            _product = Product.objects.get(id=product)
+            im['product'] = _product
+            new_image = ProductImage(**im)
+            new_image.save()
