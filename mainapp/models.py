@@ -9,6 +9,7 @@ class ProductCategory(models.Model):
         return self.name
 
 
+
 class Author(models.Model):
     name = models.CharField(max_length=256)
 
