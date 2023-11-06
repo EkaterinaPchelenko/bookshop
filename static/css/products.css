@@ -388,7 +388,7 @@
   font-size: 1.125rem;
   letter-spacing: 1px;
   background-image: none;
-  margin: 32px auto 0;
+  margin: 32px auto;
   padding: 22px 22px 23px 21px;
 }
 
@@ -449,6 +449,10 @@
 .u-section-2 .u-list-item-3 {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.product_list_item {
+    border:1px solid rgba(0, 0, 0, 0.125);
 }
 
 .u-section-2 .u-container-layout-3 {
