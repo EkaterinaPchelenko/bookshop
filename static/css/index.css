@@ -69,6 +69,7 @@
   font-weight: 700;
   font-size: 1.25rem;
   margin: 0 78px 0 0;
+  color: #fff;
 }
 
 .u-section-1 .u-text-3 {
@@ -80,7 +81,7 @@
   letter-spacing: 2px;
   background-image: none;
   border-style: solid;
-  font-weight: 100;
+  font-weight: 300;
   text-transform: none;
   margin: 20px 0 0;
 }
