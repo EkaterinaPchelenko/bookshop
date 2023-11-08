@@ -2,20 +2,26 @@
     box-sizing: border-box;
     display: flex;
     flex-direction:column;
-    gap:10px;
+    gap:30px;
+    padding-top: 20px;
+}
 
+.u-personal_data {
+    margin:0 auto;
 }
 
 .personal_data {
     box-sizing: border-box;
     display: flex;
     flex-direction:row;
-    gap:10px;
+    gap:20px;
     margin:0 auto;
 }
 
 .personal_data_heading {
     margin:0 auto;
+    font-family: 'Playfair Display', serif;
+    color: #4d3334;
 }
 
 .personal_data_container {
@@ -29,9 +35,15 @@
 .personal_data_personality_card {
     box-sizing: border-box;
     display: flex;
-    flex-direction:column;
-    border:1px solid #000;
-    gap:10px;
+    flex-direction: column;
+    border: 1px solid #d4d4d4;
+    gap: 10px;
+    align-items: center;
+    max-width: 400px;
+    width: max-content;
+    min-height: 400px;
+    height: 100%;
+    padding-top: 20px;
 }
 
 .personal_data_personality_img {
@@ -41,22 +53,83 @@
     height: 200px;
     object-fit: cover;
     object-position: center;
+    cursor:pointer;
+}
+
+.personal_data_personality_user-name {
+    margin:0 auto;
+    font-family: 'Playfair Display', serif;
+    color: #4d3334;
+    font-size: 30px;
+    font-weight: 300;
+    margin: 0 50px;
+}
+
+.personal_data_personality_user-name:hover {
+    text-decoration:none;
 }
 
 .personal_data_contact-information {
     box-sizing: border-box;
     display: flex;
-    flex-direction:column;
-    border:1px solid #000;
-    gap:10px;
+    flex-direction: column;
+    border: 1px solid #d4d4d4;
+    gap: 10px;
+    align-items: center;
+    max-width:600px;
+    width: 100%;
+    min-height: 400px;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.address__list {
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration:none;
+    text-transform:none;
+    color: #4d3334;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.contact-inf-container {
+    display: block;
+    margin: 0 20px;
+    box-sizing: border-box;
+}
+
+.address__list-item {
+    list-style-type: none;
+    word-spacing: 5px;
+}
+
+.address__list-item-text {
+    font-weight: bold;
+}
+
+span {
+    font-weight: 400;
+}
+
+.change_data_button {
+    position: absolute;
+    bottom: 0;
+}
+
+.u-change_data_button {
+    font-weight: 400;
 }
 
 .busket_and_liked_product {
     box-sizing: border-box;
     display: flex;
-    flex-direction:row;
+    flex-direction:column;
     gap:10px;
     margin:0 auto;
+    max-width: 950px;
+    width: 100%;
 }
 
 .busket_product {
@@ -64,7 +137,9 @@
 }
 
 .busket_product_heading {
-
+    margin:0 auto;
+    font-family: 'Playfair Display', serif;
+    color: #4d3334;
 }
 
 .busket_product_list {
@@ -134,6 +209,33 @@
   overflow: hidden;
 }
 
+.shop_table {
+    border: 1px solid rgba(0,0,0,.1);
+    margin: 0 -1px 24px 0;
+    text-align: left;
+    width: 100%;
+    border-collapse: separate;
+    border-radius: 5px;
+    font-family: Roboto, sans-serif;
+    color: #4d3334;
+}
+
+.product-thumbnail {
+    max-width: 100px;
+}
+
+.product-thumbnail-img-container {
+    width:100%;
+    height:100%;
+    max-width: 100px;
+}
+
+.product-thumbnail-img {
+    max-width: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
 .busket_product-card-thumbnail {
   max-width: 194px;
   max-height: 103px;
@@ -145,41 +247,77 @@
 }
 
 .liked_product {
-
+    display: block;
+    margin-bottom: 40px;
+    box-sizing: border-box;
 }
 
 .liked_product_heading {
-
+    margin:0 auto;
+    font-family: 'Playfair Display', serif;
+    color: #4d3334;
 }
 
 .liked_list {
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 400px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow-y: hidden;
+  overflow-x: auto;
   position: relative;
   list-style: none;
+  gap:50px;
+  padding: 0;
 }
 
 .liked_list_item {
-  padding-bottom: 30px;
-  width: 100%;
+    width: 100%;
+    max-width: max-content;
+    min-height: 400px;
+    height: 100%;
 
 }
 
 .liked_product_card {
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  width: 100%;
+  width: max-content;
   height: 100%;
   align-content: center;
   flex-wrap: nowrap;
   padding: 2px;
+}
+
+.liked_product_img-container {
+    max-width: 180px;
+    width: 100%;
+    height: 100%;
+}
+
+.liked_product_description_container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+}
+
+.liked_product_description {
+    font-family: 'Playfair Display', serif;
+    color: #4d3334;
+    font-size: 30px;
+    font-weight: 300
+}
+
+.liked_product_img {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .woocommerce-cart-form {
@@ -194,8 +332,26 @@
     background: transparent;
 }
 
-.product-remove {
+.woocommerce-cart-form__cart-item {
+    padding: 10px;
+}
 
+.remove {
+    display: block;
+    font-size: 1.5em;
+    height: 1em;
+    width: 1em;
+    text-align: center;
+    line-height: 1;
+    border-radius: 100%;
+    color: red!important;
+    text-decoration: none;
+    font-weight: 700;
+    border: 0;
+}
+
+.product-remove {
+    padding: 10px;
 }
 
 .screen-reader-text {
@@ -213,7 +369,46 @@
 }
 
 .product-thumbnail {
+    padding: 10px;
+}
 
+.product-name {
+    padding: 10px;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+
+.product-name-decoration {
+    color: #4d3334;
+    text-transform: none;
+}
+
+.product-price {
+    padding: 10px;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+
+.product-quantity {
+    padding: 10px;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+
+.quantity {
+    width: 100px;
+    text-align: center;
+}
+
+
+.product-subtotal {
+    padding: 10px;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+
+.order-total {
+    border-collapse: separate;
 }
 
 .button_liked_product {
@@ -241,4 +436,13 @@
     background-color: #f5f5f5;
 }
 
-
+input {
+    background: transparent ;
+    color: #666 ;
+    border: 1px solid rgba(0, 0, 0, 0.05) ;
+    font-size: 14px;
+    margin-right: 0;
+    margin-left: auto;
+    width: 4.3em;
+    padding:16px;
+}
