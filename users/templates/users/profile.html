@@ -1,0 +1,185 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block css %}
+        <link rel="stylesheet" href="/static/css/profile.css" media="screen">
+        <link rel="stylesheet" href="/static/css/page.css" media="screen">
+{% endblock %}
+
+{% block content %}
+        <section class="profile">
+                <h2 class="personal_data_heading">Личные данные</h2>
+                <div class="personal_data">
+                        <div class="personal_data_container">
+                                <div class="personal_data_personality">
+                                        <div class="personal_data_personality_card">
+                                                <img class="personal_data_personality_img"
+                                                     src="/static/vendor/img/index/Logo_2_.png"
+                                                     alt="Фотография пользователя"
+                                                >
+                                                <h3 class="personal_data_personality_user-name">
+                                                        Имя пользователя
+                                                </h3>
+                                        </div>
+
+                                </div>
+                        </div>
+                        <div class="personal_data_contact-information">
+                                <address>
+                                           <ul>
+                                                <li>
+                                                        <p>Имя: <span id="username">John Doe</span></p>
+                                                </li>
+                                                <li>
+                                                        <p>Email: <span id="email">johndoe@example.com</span></p>
+                                                </li>
+                                                <li>
+                                                        <p>Телефон: <span id="phone">123-456-7890</span></p>
+                                                </li>
+                                                <li>
+                                                        <p>Адрес: <span id="address">ул. Примерная, 123</span></p>
+                                                </li>
+                                           </ul>
+
+                                </address>
+
+                        </div>
+
+
+
+                </div>
+
+                <div class="busket_and_liked_product">
+                        <div class="busket_product">
+                                <h2 class="busket_product_heading">Корзина</h2>
+                                <div class="busket_product_list">
+                                    <form class="woocommerce-cart-form">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th class="product-remove">
+                                                        <span class="screen-reader-text">Удалить товар</span>
+                                                    </th>
+                                                    <th class="product-thumbnail">
+                                                        <span class="screen-reader-text">Фото товара</span>
+                                                    </th>
+                                                    <th class="product-name">Товар</th>
+                                                    <th class="product-price">Цена</th>
+                                                    <th class="product-quantity">Количество</th>
+                                                    <th class="product-subtotal">Подытог</th>
+                                                </tr>
+
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="product-remove">
+                                                    <a class="remove" aria-label="Удалить эту позицию" data-product_id="1989" data-product_sku="1500-40">
+                                                        ×
+                                                    </a>
+                                                </td>
+                                                <td class="product-thumbnail">
+                                                    <a href="#">
+                                                        <img width="100" height="100" class="" src="https://www.yolabooks.ru/storage/photo/resized/xy_1732x1732/f/92k9yf9fjs0iom0_c3f69452.jpg" decoding="async" fetchpriority="high">
+                                                    </a>
+                                                </td>
+                                                <td class="product-name" data-title="Товар">
+                                                    <a href="#">
+                                                        Книга1
+                                                    </a>
+                                                </td>
+                                                <td class="product-price" data-title="Цена">
+                                                    <span>
+                                                        <bdi>
+                                                            "500.00"
+                                                        </bdi>
+                                                        <span>
+                                                            ₽
+                                                        </span>
+                                                    </span>
+                                                </td>
+                                                <td class="product-quantity" data-title="Количество">
+                                                    <div class="quantity" bis_skin_checked="1">
+                                                        <label class="screen-reader-text">Количество товара книга1</label>
+                                                        <input type="number" step="1" min="0" value="1" title="Кол-во" size="4" placeholder inputmode="numeric" autocomplete="off">
+                                                    </div>
+                                                </td>
+                                                <td class="product-subtotal" data-title="Подытог">
+                                                    <span>
+                                                        <bdi>
+                                                            "500.00"
+                                                        </bdi>
+                                                        <span>
+                                                            ₽
+                                                        </span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </form>
+                                    <div>
+                                        <h3>Сумма заказа</h3>
+                                        <table cellspacing="0" class="">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Итого</th>
+                                                    <td data-title="Итого">
+                                                        <strong>
+                                                            <span>
+                                                                <bdi>
+                                                                    500.00
+                                                                </bdi>
+                                                                <span>
+                                                                    ₽
+                                                                </span>
+                                                            </span>
+                                                        </strong>
+
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                        <div>
+                                            <a href="#" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> Оформить заказ
+
+                                            </a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                        </div>
+                        <div class="liked_product">
+                            <h2 class="liked_product_heading">Избранное</h2>
+                            <div>
+                                <ul class="liked_list">
+                                    <li class="liked_list_item">
+                                        <a href="#0" class="">
+                                          <article class="liked_product_card">
+                                            <img width="150" height="150" src="https://www.yolabooks.ru/storage/photo/resized/xy_1732x1732/f/92k9yf9fjs0iom0_c3f69452.jpg" alt="" class="" />
+                                            <div class="">
+                                              <h3 class="">Книга1</h3>
+                                              <p class="">Роман</p>
+                                            </div>
+                                            <button class="button_liked_product" type="button">
+                                                <svg width="25" height="20" viewBox="0 -1 22 20" fill="none">
+                                                  <path d="M16.749 0C13.875 0 12.676 2.75 11 2.75C9.324 2.75 8.12498 0 5.25098 0C2.52898 0 0 2.29099 0 5.38199C0 11.114 9.794 14.861 11 18C12.206 14.86 22 11.114 22 5.38199C22 2.29099 19.471 0 16.749 0Z" fill="#c70000" stroke="#c70000" data-spm-anchor-id="a2g2w.detail.0.i3.263872f6fDcHOp">
+                                                  </path>
+                                                </svg>
+                                          </article>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                </div>
+        </section>
+
+
+{% endblock %}
+
+</html>
