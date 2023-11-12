@@ -1,0 +1,202 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block css %}
+        <link rel="stylesheet" href="/static/css/profile.css" media="screen">
+        <link rel="stylesheet" href="/static/css/page.css" media="screen">
+{% endblock %}
+
+{% block content %}
+        <section class="profile">
+            <div class="u-personal_data">
+                <h2 class="personal_data_heading">Личные данные</h2>
+                <div class="personal_data">
+                        <div class="personal_data_container">
+                                <div class="personal_data_personality">
+                                        <div class="personal_data_personality_card">
+                                                <img class="personal_data_personality_img"
+                                                     src="http://v1.popcornnews.ru/k2/news/1200/upload/wcTTcx.jpg"
+                                                     alt="Фотография пользователя"
+                                                >
+                                                <h3 class="personal_data_personality_user-name">
+                                                        Имя пользователя
+                                                </h3>
+                                        </div>
+
+                                </div>
+                        </div>
+                        <div class="personal_data_contact-information">
+                                <address class="contact-inf-container">
+                                           <ul class="address__list">
+                                                <li class="address__list-item">
+                                                        <p class="address__list-item-text">Имя: <span id="username">John Doe</span></p>
+                                                </li>
+                                                <li class="address__list-item">
+                                                        <p class="address__list-item-text">Email: <span id="email">johndoe@example.com</span></p>
+                                                </li>
+                                                <li class="address__list-item">
+                                                        <p class="address__list-item-text">Телефон: <span id="phone">123-456-7890</span></p>
+                                                </li>
+                                                <li class="address__list-item">
+                                                        <p class="address__list-item-text">Адрес: <span id="address">Россия, г.Залупкин, ул. Примерная, д. 123, кв 121</span></p>
+                                                </li>
+                                           </ul>
+
+                                </address>
+                                <div class="change_data_button">
+                                    <a href="#" class="u-change_data_button u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-btn-2"> Изменить данные
+
+                                    </a>
+                                </div>
+
+                        </div>
+
+
+
+                </div>
+            </div>
+
+                <div class="busket_and_liked_product">
+                        <div class="busket_product">
+                                <h2 class="busket_product_heading">Корзина</h2>
+                                <div class="busket_product_list">
+                                    <form class="woocommerce-cart-form">
+                                        <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents">
+                                            <thead>
+                                                <tr>
+                                                    <th class="product-remove">
+                                                        <span class="screen-reader-text">Удалить товар</span>
+                                                    </th>
+                                                    <th class="product-thumbnail">
+                                                        <span class="screen-reader-text">Фото товара</span>
+                                                    </th>
+                                                    <th class="product-name">Товар</th>
+                                                    <th class="product-price">Цена</th>
+                                                    <th class="product-quantity">Количество</th>
+                                                    <th class="product-subtotal">Подытог</th>
+                                                </tr>
+
+                                            </thead>
+                                            <tbody>
+                                            <tr class="woocommerce-cart-form__cart-item cart_item">
+                                                <td class="product-remove">
+                                                    <a class="remove" aria-label="Удалить эту позицию" data-product_id="1989" data-product_sku="1500-40">
+                                                        ×
+                                                    </a>
+                                                </td>
+                                                <td class="product-thumbnail">
+                                                    <a href="#">
+                                                        <div class = "product-thumbnail-img-container">
+                                                            <img class = "product-thumbnail-img"  src="https://www.yolabooks.ru/storage/photo/resized/xy_1732x1732/f/92k9yf9fjs0iom0_c3f69452.jpg" decoding="async" fetchpriority="high">
+                                                        </div>
+                                                    </a>
+                                                </td>
+                                                <td class="product-name" data-title="Товар">
+                                                    <a class="product-name-decoration" href="#">
+                                                        Книга1
+                                                    </a>
+                                                </td>
+                                                <td class="product-price" data-title="Цена">
+                                                    <span>
+                                                        <bdi>
+                                                            "500.00"
+                                                        </bdi>
+                                                        <span>
+                                                            ₽
+                                                        </span>
+                                                    </span>
+                                                </td>
+                                                <td class="product-quantity" data-title="Количество">
+                                                    <div class="quantity" bis_skin_checked="1">
+                                                        <label class="screen-reader-text">Количество товара книга1</label>
+                                                        <input class="input-text qty text" type="number" step="1" min="0" value="1" title="Кол-во" size="4" placeholder inputmode="numeric" autocomplete="off">
+                                                    </div>
+                                                </td>
+                                                <td class="product-subtotal" data-title="Подытог">
+                                                    <span>
+                                                        <bdi>
+                                                            "500.00"
+                                                        </bdi>
+                                                        <span>
+                                                            ₽
+                                                        </span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </form>
+                                    <div>
+                                        <h3>Сумма заказа</h3>
+                                        <table cellspacing="0" class="shop_table">
+                                            <tbody>
+                                                <tr class="order-total">
+                                                    <th>Итого</th>
+                                                    <td data-title="Итого">
+                                                        <strong>
+                                                            <span>
+                                                                <bdi>
+                                                                    500.00
+                                                                </bdi>
+                                                                <span>
+                                                                    ₽
+                                                                </span>
+                                                            </span>
+                                                        </strong>
+
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                        <div>
+                                            <a href="#" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> Оформить заказ
+
+                                            </a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                        </div>
+                        <div class="liked_product">
+                            <h2 class="liked_product_heading">Избранное</h2>
+                            <div>
+                                <ul class="liked_list">
+                                    <li class="liked_list_item">
+                                        <a href="#0" class="">
+                                          <article class="liked_product_card">
+                                            <div class = "liked_product_img-container">
+                                                <img class = "liked_product_img" src="https://www.yolabooks.ru/storage/photo/resized/xy_1732x1732/f/92k9yf9fjs0iom0_c3f69452.jpg" alt=""  />
+
+                                            </div>
+                                            <div class="liked_product_description_container">
+                                              <div class="liked_product_description">
+                                                  <h3 class="">Книга1</h3>
+                                                    <p class="">Роман</p>
+                                              </div>
+
+                                              <button class="button_liked_product" type="button">
+                                                <svg width="25" height="20" viewBox="0 -1 22 20" fill="none">
+                                                  <path d="M16.749 0C13.875 0 12.676 2.75 11 2.75C9.324 2.75 8.12498 0 5.25098 0C2.52898 0 0 2.29099 0 5.38199C0 11.114 9.794 14.861 11 18C12.206 14.86 22 11.114 22 5.38199C22 2.29099 19.471 0 16.749 0Z" fill="#c70000" stroke="#c70000" data-spm-anchor-id="a2g2w.detail.0.i3.263872f6fDcHOp">
+                                                  </path>
+                                                </svg>
+                                            </div>
+
+                                          </article>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+
+                </div>
+        </section>
+
+
+{% endblock %}
+
+</html>
