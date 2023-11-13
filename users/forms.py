@@ -8,7 +8,7 @@ class UserRegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'password1', 'password2')
+        fields = ('username', 'email', 'first_name', 'last_name', 'password1', 'password2', 'address', 'phone_number')
 
     def __init__(self, *args, **kwargs):
         super(UserCreationForm, self).__init__(*args, **kwargs)
@@ -16,11 +16,10 @@ class UserRegisterForm(UserCreationForm):
         self.fields['email'].widget.attrs['placeholder'] = 'Введите адресс эл.почты'
         self.fields['first_name'].widget.attrs['placeholder'] = 'Введите имя'
         self.fields['last_name'].widget.attrs['placeholder'] = 'Введите фамилию'
+        self.fields['phone_number'].widget.attrs['placeholder'] = 'Введите номер телефона'
+        self.fields['address'].widget.attrs['placeholder'] = 'Введите свой адрес'
         self.fields['password1'].widget.attrs['placeholder'] = 'Введите пароль'
         self.fields['password2'].widget.attrs['placeholder'] = 'Подтвердите пароль'
-
-        for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'form-control py-4'
 
 
 class UserProfileForm(UserChangeForm):
@@ -29,7 +28,7 @@ class UserProfileForm(UserChangeForm):
         image = forms.ImageField(widget=forms.FileInput(), required=False)
 
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'image')
+        fields = ('username', 'email', 'first_name', 'last_name', 'image', 'phone_number', 'address')
 
     def __init__(self, *args, **kwargs):
         super(UserChangeForm, self).__init__(*args, **kwargs)

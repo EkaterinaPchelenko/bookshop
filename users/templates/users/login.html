@@ -9,14 +9,16 @@
 {% block content %}
       <section class="u-align-center u-clearfix u-section-1 u-section-login">
           <div class="form-container">
-                <form class="form-users">
-                  <label for="email" class="visually-hidden">Почта</label>
-                  <input type="email" placeholder="me@example.com" id="email" required/>
-                  <label for="password" class="visually-hidden">Пароль</label>
-                  <input type="text" placeholder="Пароль" id="password" required />
+              <form class="form-users" action="{% url 'users:login' %}" method="post">
+                  {% csrf_token %}
+<!--                <form class="form-users">-->
+                  <label class="visually-hidden">Имя пользователя</label>
+                    {{ form.username }}
+                  <label class="visually-hidden">Пароль</label>
+                    {{ form.password }}
                   <label class="agree"><input type="checkbox" /> Запомнить меня</label>
                   <button class="login_button">Войти</button>
-                </form>
+              </form>
           </div>
       </section>
 {% endblock %}
