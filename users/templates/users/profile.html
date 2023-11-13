@@ -19,7 +19,7 @@
                                                      alt="Фотография пользователя"
                                                 >
                                                 <h3 class="personal_data_personality_user-name">
-                                                        Имя пользователя
+                                                        {{ form.username }}
                                                 </h3>
                                         </div>
 
@@ -27,20 +27,23 @@
                         </div>
                         <div class="personal_data_contact-information">
                                 <address class="contact-inf-container">
+                                    <form action="{% url 'users:profile' %} " method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
                                            <ul class="address__list">
                                                 <li class="address__list-item">
-                                                        <p class="address__list-item-text">Имя: <span id="username">John Doe</span></p>
+                                                        <p class="address__list-item-text">Имя: <span id="username">{{ form.first_name }}</span></p>
                                                 </li>
                                                 <li class="address__list-item">
-                                                        <p class="address__list-item-text">Email: <span id="email">johndoe@example.com</span></p>
+                                                        <p class="address__list-item-text">Email: <span id="email">{{ form.email }}</span></p>
                                                 </li>
                                                 <li class="address__list-item">
-                                                        <p class="address__list-item-text">Телефон: <span id="phone">123-456-7890</span></p>
+                                                        <p class="address__list-item-text">Телефон: <span id="phone">{{ form.phone_number }}</span></p>
                                                 </li>
                                                 <li class="address__list-item">
-                                                        <p class="address__list-item-text">Адрес: <span id="address">Россия, г.Залупкин, ул. Примерная, д. 123, кв 121</span></p>
+                                                        <p class="address__list-item-text">Адрес: <span id="address">{{ form.address }}</span></p>
                                                 </li>
                                            </ul>
+                                    </form>
 
                                 </address>
                                 <div class="change_data_button">
