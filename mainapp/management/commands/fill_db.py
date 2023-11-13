@@ -1,9 +1,10 @@
 import json
 from django.core.management.base import BaseCommand
 from mainapp.models import ProductCategory, Product, Author, ProductImage
-from django.contrib.auth.models import User
 
 import json, os
+
+from users.models import User
 
 JSON_PATH = 'mainapp/fixtures'
 
@@ -14,6 +15,8 @@ def load_from_json(file_name):
 
 
 class Command(BaseCommand):
+    super_user = User.objects.create_superuser('Kate', 'user@bookshop.local', 'bookshop')
+
     def handle(self, *args, **options):
         categories = load_from_json('mainapp/fixtures/categories.json')
 
