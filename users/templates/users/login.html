@@ -1,0 +1,20 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block css %}
+      <link rel="stylesheet" href="/static/css/login.css" media="screen">
+      <link rel="stylesheet" href="/static/css/page.css" media="screen">
+{% endblock %}
+
+{% block content %}
+      <section>
+                <form>
+                  <label for="email" class="visually-hidden">Почта</label>
+                  <input type="email" placeholder="me@example.com" id="email" />
+                  <label for="password" class="visually-hidden">Пароль</label>
+                  <input type="text" placeholder="Пароль" id="password" />
+                  <label class="agree"><input type="checkbox" /> Запомнить меня</label>
+                  <button>Войти</button>
+                </form>
+      </section>
+{% endblock %}

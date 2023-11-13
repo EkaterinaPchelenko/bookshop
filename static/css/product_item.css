@@ -9,7 +9,7 @@
 }
 
 .u-section-1 .u-container-layout-1 {
-  padding: 30px;
+
 }
 
 .u-section-1 .u-gallery-1 {
@@ -64,15 +64,15 @@
 }
 
 .u-section-1 .u-text-1 {
-  margin: -502px auto 0 573px;
+
 }
 
 .u-section-1 .u-product-price-1 {
-  margin: 25px auto 0 573px;
+
 }
 
 .u-section-1 .u-text-2 {
-  margin: 25px 0 0 573px;
+
 }
 
 .u-section-1 .u-btn-1 {
@@ -80,7 +80,7 @@
   border-style: none;
   text-transform: uppercase;
   font-weight: 700;
-  margin: 25px auto 0 573px;
+
 }
 
 .u-section-1 .u-icon-1 {
@@ -419,4 +419,65 @@
   .u-dialog-section-4 .u-icon-1 {
     right: 20px;
   }
+}
+
+.u-product-description-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.button_liked_product {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    min-width: 36px;
+    min-height: 36px;
+    border: none;
+    border-radius: 100em;
+    background-color: transparent;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color .1s ease-in-out;
+}
+
+.button_liked_product:hover {
+    background-color: #f5f5f5;
+}
+
+.u-product-container {
+    position: relative;
+    flex: 1;
+    max-width: 100%;
+    transition-duration: inherit;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+    gap: 80px;
+}
+
+.u-price-new {
+    margin-left:0 !important;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.u-buy-btn {
+    margin:0 !important;
 }
