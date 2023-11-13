@@ -1,0 +1,22 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block css %}
+      <link rel="stylesheet" href="/static/css/login.css" media="screen">
+      <link rel="stylesheet" href="/static/css/page.css" media="screen">
+{% endblock %}
+
+{% block content %}
+      <section class="u-align-center u-clearfix u-section-1 u-section-login">
+          <div class="form-container">
+                <form class="form-users">
+                  <label for="email" class="visually-hidden">Почта</label>
+                  <input type="email" placeholder="me@example.com" id="email" />
+                  <label for="password" class="visually-hidden">Пароль</label>
+                  <input type="text" placeholder="Пароль" id="password" />
+                  <label class="agree"><input type="checkbox" /> Запомнить меня</label>
+                  <button class="login_button">Войти</button>
+                </form>
+          </div>
+      </section>
+{% endblock %}
