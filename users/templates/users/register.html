@@ -1,0 +1,35 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block css %}
+      <link rel="stylesheet" href="/static/css/register.css" media="screen">
+      <link rel="stylesheet" href="/static/css/page.css" media="screen">
+{% endblock %}
+
+{% block content %}
+      <section class="u-align-center u-clearfix u-section-1 u-section-login">
+          <div class="form-container">
+                <form class="form-users">
+                    <label for="email" class="visually-hidden">Почта</label>
+                     <input type="email" placeholder="me@example.com" id="email" required />
+
+                    <label for="first-name" class="visually-hidden">Имя</label>
+                    <input type="text" placeholder="Имя" id="first-name" minlength="2" maxlength="20" required/>
+
+                    <label for="second-name" class="visually-hidden">Фамилия</label>
+                    <input type="text" placeholder="Фамилия" id="second-name" required/>
+
+                    <label for="tel" class="visually-hidden">Номер телефона</label>
+                    <input type="tel" placeholder="Номер телефона" id="tel" required />
+
+                    <label for="address" class="visually-hidden">Адрес</label>
+                    <input type="text" placeholder="Адрес" id="address"  />
+
+                    <label for="password" class="visually-hidden">Пароль</label>
+                    <input type="text" placeholder="Пароль" id="password" required />
+
+                    <button class="login_button">Зарегистироваться</button>
+                </form>
+          </div>
+      </section>
+{% endblock %}
