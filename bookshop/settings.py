@@ -138,4 +138,7 @@ CACHE_MIDDLEWARE_KEY_PREFIX = 'bookshop'
 
 
 AUTH_USER_MODEL = 'users.User'
+LOGIN_URL = '/users/login'
+LOGIN_REDIRECT_URL = '/'
+
 LOW_CACHE = True

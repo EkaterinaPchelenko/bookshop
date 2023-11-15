@@ -1,9 +1,12 @@
 from django.contrib import auth, messages
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, HttpResponseRedirect
-from django.urls import reverse
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.shortcuts import render, HttpResponseRedirect, get_object_or_404, redirect
+from django.urls import reverse, reverse_lazy
+from django.utils.decorators import method_decorator
+from django.views.generic import UpdateView
 
 from users.forms import UserRegisterForm, UserLoginForm, UserProfileForm
+from users.models import User
 
 
 def register(request):
@@ -43,24 +46,32 @@ def login(request):
     return render(request, 'users/login.html', context)
 
 
-@login_required()
-def profile(request):
-    if request.method == 'POST':
-        form = UserProfileForm(data=request.POST, instance=request.user, files=request.FILES)
+class ProfileFormView(UpdateView):
+    model = User
+    form_class = UserProfileForm
+    template_name = 'users/profile.html'
+    success_url = reverse_lazy('users:profile')
+    title = 'GeekShop - Профиль'
+
+    def get_object(self, queryset=None):
+        return get_object_or_404(User, pk=self.request.user.pk)
+
+    @method_decorator(user_passes_test(lambda u: u.is_authenticated))
+    def dispatch(self, request, *args, **kwargs):
+        return super(ProfileFormView, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(ProfileFormView, self).get_context_data(**kwargs)
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(data=request.POST, files=request.FILES, instance=self.get_object())
         if form.is_valid():
             form.save()
-            messages.success(request, 'Профиль сохранён.')
+            return redirect(self.success_url)
         else:
-            messages.error(request, 'Профиль не сохранён!')
-        return HttpResponseRedirect(reverse('users:profile'))
-
-    context = {
-        'title': 'Профиль',
-        'form': UserProfileForm(instance=request.user),
-        # 'baskets': Basket.objects.filter(user=request.user),
-
-    }
-    return render(request, 'users/profile.html', context)
+            print(form)
+        return redirect(self.success_url)
 
 
 def logout(request):

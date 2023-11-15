@@ -8,6 +8,21 @@
 
 {% block content %}
       <section class="u-align-center u-clearfix u-section-1 u-section-login">
+          {% if form.errors or messages %}
+                <div class="alert {% if messages %} alert-success {% else %} alert-warning {% endif %} alert-dismissible fade show"
+                     role="alert"
+                     style="margin-top: 50px;">
+                    {% if messages %}
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    {% else %}
+                        {% for error in form.non_field_errors %}
+                            {{ error }}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endif %}
           <div class="form-container">
               <form class="form-users" action="{% url 'users:login' %}" method="post">
                   {% csrf_token %}

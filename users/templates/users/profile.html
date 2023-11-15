@@ -11,6 +11,8 @@
             <div class="u-personal_data">
                 <h2 class="personal_data_heading">Личные данные</h2>
                 <div class="personal_data">
+                    <form  class="personal_data" action="{% url 'users:profile' %} " method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <div class="personal_data_container">
                                 <div class="personal_data_personality">
                                         <div class="personal_data_personality_card">
@@ -27,34 +29,29 @@
                         </div>
                         <div class="personal_data_contact-information">
                                 <address class="contact-inf-container">
-                                    <form action="{% url 'users:profile' %} " method="post" enctype="multipart/form-data">
-                                        {% csrf_token %}
                                            <ul class="address__list">
                                                 <li class="address__list-item">
-                                                        <p class="address__list-item-text">Имя: <span id="username">{{ form.first_name }}</span></p>
+                                                        <label for="{{ form.first_name.id_for_label }}" class="address__list-item-text">Имя: {{ form.first_name }}</label>
                                                 </li>
                                                 <li class="address__list-item">
-                                                        <p class="address__list-item-text">Email: <span id="email">{{ form.email }}</span></p>
+                                                        <label for="{{ form.email.id_for_label }}" class="address__list-item-text">Email: {{ form.email }}</label>
                                                 </li>
                                                 <li class="address__list-item">
-                                                        <p class="address__list-item-text">Телефон: <span id="phone">{{ form.phone_number }}</span></p>
+                                                        <label for="{{ form.phone_number.id_for_label }}" class="address__list-item-text">Телефон: {{ form.phone_number }}</label>
                                                 </li>
                                                 <li class="address__list-item">
-                                                        <p class="address__list-item-text">Адрес: <span id="address">{{ form.address }}</span></p>
+                                                        <label for="{{ form.address.id_for_label }}" class="address__list-item-text">Адрес: {{ form.address }}</label>
                                                 </li>
                                            </ul>
-                                    </form>
+                                        <div class="change_data_button">
+                                            <input class="u-change_data_button u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-btn-2" type="submit" value="Сохранить">
+                                        </div>
 
                                 </address>
-                                <div class="change_data_button">
-                                    <a href="#" class="u-change_data_button u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-btn-2"> Изменить данные
 
-                                    </a>
-                                </div>
 
                         </div>
-
-
+                    </form>
 
                 </div>
             </div>
@@ -154,7 +151,7 @@
                                             </tbody>
                                         </table>
                                         <div>
-                                            <a href="#" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> Оформить заказ
+                                            <a type="submit" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> Оформить заказ
 
                                             </a>
                                         </div>
@@ -185,6 +182,7 @@
                                                   <path d="M16.749 0C13.875 0 12.676 2.75 11 2.75C9.324 2.75 8.12498 0 5.25098 0C2.52898 0 0 2.29099 0 5.38199C0 11.114 9.794 14.861 11 18C12.206 14.86 22 11.114 22 5.38199C22 2.29099 19.471 0 16.749 0Z" fill="#c70000" stroke="#c70000" data-spm-anchor-id="a2g2w.detail.0.i3.263872f6fDcHOp">
                                                   </path>
                                                 </svg>
+                                              </button>
                                             </div>
 
                                           </article>
@@ -201,5 +199,3 @@
 
 
 {% endblock %}
-
-</html>
