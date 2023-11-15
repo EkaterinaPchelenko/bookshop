@@ -12,6 +12,7 @@
                 <div class="alert {% if messages %} alert-success {% else %} alert-warning {% endif %} alert-dismissible fade show"
                      role="alert"
                      style="margin-top: 50px;">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';"> &times; </span>
                     {% if messages %}
                         {% for message in messages %}
                             {{ message }}

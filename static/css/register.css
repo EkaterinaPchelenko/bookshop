@@ -89,6 +89,11 @@ form {
     position: absolute;
     width: 100%;
     max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: flex-start;
+}
 }
 
 
@@ -99,10 +104,68 @@ form {
 
 .u-section-login {
   display: flex;
+  flex-direction: column;
+  gap: 30px;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
   background-color: rgb(242,232,201, 30%);
   position: relative;
+}
+
+.alert {
+    display: flex;
+    color: #000;
+    border: 1px solid #fff;
+    padding: 15px;
+    max-width: 600px;
+    width: 100%;
+    font-size: 18px;
+    background-color: #F2DDC6;
+    font-family: Montserrat, sans-serif;
+    word-spacing: 1px;
+    line-height: 1.4;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert-warning   {
+
+}
+
+.alert-dismissible fade show {
+
+}
+
+/* The close button */
+.closebtn {
+    color: #731d21;
+    font-weight: bold;
+    float: left;
+    font-size: 25px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
+.errorlist {
+    list-style-type: none;
+    text-align: left;
+    font-size: 20px !important;
+}
+
+ul {
+    font-weight:700;
+}
+
+ul:first-child {
+    font-weight:300;
 }
