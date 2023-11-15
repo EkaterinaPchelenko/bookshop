@@ -97,9 +97,55 @@ form {
 
 .u-section-login {
   display: flex;
+  flex-direction: column;
+  gap: 30px;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
   background-color: rgb(242,232,201, 30%);
+}
+
+.alert {
+    display: flex;
+    color: #000;
+    border: 1px solid #fff;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 18px;
+    background-color: #F2DDC6;
+    font-family: Montserrat, sans-serif;
+    word-spacing: 1px;
+    line-height: 1.4;
+    flex-direction: row;
+    align-items: center;
+}
+
+.alert-warning   {
+
+}
+
+.alert-dismissible fade show {
+
+}
+
+/* The close button */
+.closebtn {
+    margin-right: 15px;
+    color: #731d21;
+    font-weight: bold;
+    float: left;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+    background-color:#fff;
+
 }
