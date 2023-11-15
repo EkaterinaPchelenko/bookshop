@@ -114,7 +114,6 @@ form {
     max-width: 500px;
     width: 100%;
     font-size: 18px;
-    background-color: #F2DDC6;
     font-family: Montserrat, sans-serif;
     word-spacing: 1px;
     line-height: 1.4;
@@ -122,8 +121,12 @@ form {
     align-items: center;
 }
 
-.alert-warning   {
+.alert-success   {
+    background-color: #e8e8b3;
 
+}
+.alert-warning   {
+    background-color: #F2DDC6;
 }
 
 .alert-dismissible fade show {
