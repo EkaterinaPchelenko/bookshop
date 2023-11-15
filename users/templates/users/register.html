@@ -9,26 +9,33 @@
 {% block content %}
       <section class="u-align-center u-clearfix u-section-1 u-section-login">
           <div class="form-container">
-                <form class="form-users">
-                    <label for="email" class="visually-hidden">Почта</label>
-                     <input type="email" placeholder="me@example.com" id="email" required />
-
-                    <label for="first-name" class="visually-hidden">Имя</label>
-                    <input type="text" placeholder="Имя" id="first-name" minlength="2" maxlength="20" required/>
-
-                    <label for="second-name" class="visually-hidden">Фамилия</label>
-                    <input type="text" placeholder="Фамилия" id="second-name" required/>
-
-                    <label for="tel" class="visually-hidden">Номер телефона</label>
-                    <input type="tel" placeholder="Номер телефона" id="tel" required />
-
-                    <label for="address" class="visually-hidden">Адрес</label>
-                    <input type="text" placeholder="Адрес" id="address"  />
-
-                    <label for="password" class="visually-hidden">Пароль</label>
-                    <input type="text" placeholder="Пароль" id="password" required />
-
-                    <button class="login_button">Зарегистироваться</button>
+              {% if form.errors %}
+                <div role="alert" style="margin-top: 50px;">
+                        {{ form.errors | escape }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endif %}
+                <form class="form-users" action="{% url 'users:register' %}" method="post">
+                    {% csrf_token%}
+                    <label for="{{ form.username.id_for_label }}" class="visually-hidden">Логин</label>
+                        {{ form.username }}
+                    <label for="{{ form.email.id_for_label }}" class="visually-hidden">Почта</label>
+                        {{ form.email }}
+                    <label for="{{ form.first_name.id_for_label }}" class="visually-hidden">Имя</label>
+                        {{ form.first_name }}
+                    <label for="{{ form.last_name.id_for_label }}" class="visually-hidden">Фамилия</label>
+                        {{ form.last_name }}
+                    <label for="{{ form.phone_number.id_for_label }}" class="visually-hidden">Номер телефона</label>
+                        {{ form.phone_number }}
+                    <label for="{{ form.address.id_for_label }}" class="visually-hidden">Адрес</label>
+                        {{ form.address }}
+                    <label for="{{ form.password1.id_for_label }}" class="visually-hidden">Пароль</label>
+                        {{ form.password1 }}
+                    <label for="{{ form.password2.id_for_label }}" class="visually-hidden">Повторите пароль</label>
+                        {{ form.password2 }}
+                    <button class="login_button">Зарегистрироваться</button>
                 </form>
           </div>
       </section>
