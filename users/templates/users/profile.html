@@ -15,14 +15,20 @@
                         {% csrf_token %}
                         <div class="personal_data_container">
                                 <div class="personal_data_personality">
-                                        <div class="personal_data_personality_card">
-                                                <img class="personal_data_personality_img"
-                                                     src="http://v1.popcornnews.ru/k2/news/1200/upload/wcTTcx.jpg"
-                                                     alt="Фотография пользователя"
-                                                >
-                                                <h3 class="personal_data_personality_user-name">
-                                                        {{ form.username }}
-                                                </h3>
+                                    <div class="personal_data_personality_card">
+                                            <img width="100" height="100"
+                                                src="{% if user.image %} {{ user.image.url }} {% else %} {% static 'vendor/img/users/default_avatar.jpg' %} {% endif %} "
+                                                class="personal_data_personality_img">
+                                            <label class="custom-file-label" for="{{ form.image.id_for_label }}">
+                                                <p class="custom-file-label_text">Выберите изображение</p>
+
+                                            </label>
+                                            <h3 class="personal_data_personality_user-name">
+                                                    {{ form.username }}
+                                            </h3>
+
+
+                                            {{ form.image }}
                                         </div>
 
                                 </div>
@@ -49,7 +55,8 @@
                             </div>
 
                             <div class="change_data_button">
-                                            <input class="u-change_data_button u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-btn-2" type="submit" value="Сохранить">
+
+                                <input class="u-change_data_button u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-btn-2" type="submit" value="Сохранить">
                             </div>
 
 
