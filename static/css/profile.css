@@ -8,12 +8,16 @@
 
 .u-personal_data {
     margin:0 auto;
+    max-width: 950px;
+    width: 100%;
 }
 
 input {
     text-align:center;
     outline:none;
     border:1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 300px;
 }
 
 .personal_data {
@@ -23,6 +27,7 @@ input {
     gap:20px;
     margin:0 auto;
     margin-top: 25px;
+    width: 100%;
 }
 
 .personal_data_heading {
@@ -122,8 +127,12 @@ span {
 }
 
 .change_data_button {
-    position: absolute;
     bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .u-change_data_button {
@@ -159,6 +168,38 @@ span {
   overflow-x: hidden;
   position: relative;
   margin-top: 25px;
+}
+
+.busket_product_list-empty {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.summ_decoration_word-empty {
+    opacity: 65%;
+}
+
+.summ_decoration_word-empty:hover {
+    text-decoration:none;
+}
+
+.button_order-container-empty {
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 2;
+    width: 100%;
+    max-width: 340px;
+    font-size: 20px;
 }
 
 .busket_product_list-item {
@@ -422,6 +463,16 @@ span {
     font-size:35px;
 }
 
+.order-total_decoration_word {
+    padding-left: 20px;
+    letter-spacing: 0.5px;
+}
+
+.order-total_decoration_price {
+    text-align: end;
+    padding-right: 20px;
+}
+
 .order-total_decoration:hover {
     text-decoration:none;
 }
@@ -440,6 +491,8 @@ span {
 
 .order-total {
     border-collapse: separate;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
 .button_liked_product {
@@ -539,4 +592,21 @@ svg path:hover {
 
 .liked_product_book-name {
     cursor:pointer;
+}
+
+.button_order-container {
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.u-radius-5 {
+    border-radius:5px;
+}
+
+.summ_decoration_word:hover {
+    text-decoration:none;
 }

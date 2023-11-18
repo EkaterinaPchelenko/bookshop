@@ -88,6 +88,7 @@ form {
     margin: 0 auto;
     width: 100%;
     max-width: 500px;
+    height: 100%;
 
 }
 
@@ -96,14 +97,18 @@ form {
 }
 
 .u-section-login {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-family: 'Open Sans', sans-serif;
-  background-color: rgb(242,232,201, 30%);
+display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(242,232,201, 30%);
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
 }
 
 .alert {
