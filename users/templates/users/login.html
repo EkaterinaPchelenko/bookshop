@@ -32,6 +32,7 @@
                     {{ form.username }}
                   <label class="visually-hidden">Пароль</label>
                     {{ form.password }}
+                  <a href="{% url 'users:register'%}">Ещё не зарегистрированы?</a>
                   <label class="agree"><input type="checkbox" /> Запомнить меня</label>
                   <button class="login_button">Войти</button>
               </form>
