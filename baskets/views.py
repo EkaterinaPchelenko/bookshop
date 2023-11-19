@@ -30,10 +30,12 @@ def basket_remove(request, basket_id):
     Basket.objects.get(id=basket_id).delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+def is_ajax(request):
+    return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
 
 @login_required()
 def basket_edit(request, id, quantity):
-    if request.is_ajax():
+    if is_ajax(request=request):
         basket = Basket.objects.get(id=id)
         if quantity > 0:
             basket.quantity = quantity
@@ -45,5 +47,5 @@ def basket_edit(request, id, quantity):
         context = {
             'baskets': baskets
         }
-        result = render_to_string('baskets/baskets.html', context)
+        result = render_to_string('baskets/basket.html', context)
         return JsonResponse({'result': result})
