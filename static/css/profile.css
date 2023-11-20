@@ -67,10 +67,7 @@ input {
   transform: scale(0);
 }
 
-.personal_data_personality_card > label:last-of-type {
-  position: fixed;
-  transform: scale(0);
-}
+
 
 .personal_data_personality_card > h6 {
   position: fixed;
@@ -78,13 +75,16 @@ input {
 }
 
 .personal_data_personality_img {
-    border-radius:50%;
+    border-radius: 50%;
     background-color: transparent;
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    height: 100%;
     object-fit: cover;
     object-position: center;
-    cursor:pointer;
+    cursor: pointer;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .personal_data_personality_user-name {
@@ -652,4 +652,16 @@ svg path:hover {
 
 .summ_decoration_word:hover {
     text-decoration:none;
+}
+
+.order-total_decoration_word {
+    text-align: start;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.order-total_decoration_price {
+    text-align: end;
+    padding-right: 10px;
+    font-size: 20px;
 }
