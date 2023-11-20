@@ -1,0 +1,127 @@
+<div class="busket_product">
+    <h2 class="busket_product_heading">Корзина</h2>
+    {% if baskets %}
+    <div class="busket_product_list">
+        {% for basket in baskets %}
+        <form class="woocommerce-cart-form">
+            <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents">
+                <thead>
+                <tr>
+                    <th class="product-remove">
+                        <span class="screen-reader-text">Удалить товар</span>
+                    </th>
+                    <th class="product-thumbnail">
+                        <span class="screen-reader-text">Фото товара</span>
+                    </th>
+                    <th class="product-name">Товар</th>
+                    <th class="product-price">Цена</th>
+                    <th class="product-quantity">Количество</th>
+                    <th class="product-subtotal">Подытог</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr class="woocommerce-cart-form__cart-item cart_item">
+                    <td class="product-remove">
+                        <a href="{% url 'baskets:basket_remove' basket.id %}" class="remove"
+                           aria-label="Удалить эту позицию" data-product_id="1989"
+                           data-product_sku="1500-40">
+                            ×
+                        </a>
+                    </td>
+                    <td class="product-thumbnail">
+                        <a href="#">
+                            <div class="product-thumbnail-img-container">
+                                <img class="product-thumbnail-img"
+                                     src={{basket.product.image}}
+                                     decoding="async" fetchpriority="high">
+                            </div>
+                        </a>
+                    </td>
+                    <td class="product-name" data-title="Товар">
+                        <a class="product-name-decoration" href="#">
+                            {{ basket.product.name }}
+                        </a>
+                    </td>
+                    <td class="product-price" data-title="Цена">
+                            <span>
+                                <bdi>
+                                    {{ basket.product.price }}
+                                </bdi>
+                                <span>
+                                    ₽
+                                </span>
+                            </span>
+                    </td>
+                    <td class="product-quantity" data-title="Количество">
+                        <div class="quantity" bis_skin_checked="1">
+                            <label class="screen-reader-text">Количество товара книга1</label>
+                            <input id="quantity" name="{{ basket.id }}" class="input-text qty text" type="number"
+                                   step="1" min="0"
+                                   value="{{basket.quantity}}" title="Кол-во"
+                                   size="4" placeholder inputmode="numeric" autocomplete="off">
+                        </div>
+                    </td>
+                    <td class="product-subtotal" data-title="Подытог">
+                            <span>
+                                <bdi>
+                                    {{ basket.sum }}
+                                </bdi>
+                                <span>
+                                    ₽
+                                </span>
+                            </span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+        {% endfor %}
+
+        <div>
+            <h3 class="summ_decoration_word">Сумма заказа</h3>
+            <table cellspacing="0" class="shop_table">
+                <tbody>
+                <tr class="order-total">
+                    <th class="order-total_decoration_word">Итого</th>
+                    <td class="order-total_decoration_price" data-title="Итого">
+                        <strong>
+                                    <span>
+                                        <bdi>
+                                            {{ baskets.0.total_sum }}
+                                        </bdi>
+                                        <span>
+                                            ₽
+                                        </span>
+                                    </span>
+                        </strong>
+
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+            <div class="button_order-container">
+                <a type="submit"
+                   class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-5 u-btn-2">
+                    Оформить заказ
+
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+    {% else %}
+    <div class="busket_product_list-empty">
+        <h3 class="summ_decoration_word-empty">Ваша корзина пуста</h3>
+        <div class="button_order-container-empty">
+            <a href="/products/" type="submit"
+               class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2">
+                Приступить к покупкам
+
+            </a>
+        </div>
+    </div>
+    {% endif %}
+</div>
