@@ -23,7 +23,7 @@
                 <tbody>
                 <tr class="woocommerce-cart-form__cart-item cart_item">
                     <td class="product-remove">
-                        <a href="{% url 'baskets:basket_remove' basket.id %}" class="remove"
+                        <a id="basket_remove" class="remove" name="{{ basket.id }}"
                            aria-label="Удалить эту позицию" data-product_id="1989"
                            data-product_sku="1500-40">
                             ×

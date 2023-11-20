@@ -1,5 +1,7 @@
 from django.urls import path
 import mainapp.views as mainapp
+from baskets.views import basket_quantity
+
 app_name = 'mainapp'
 
 urlpatterns = [
