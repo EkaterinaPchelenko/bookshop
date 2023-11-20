@@ -10,15 +10,18 @@
     <meta charset="UTF-8">
     <title>
         {% block title %}
-            {{ title|title }}
+        {{ title|title }}
         {% endblock %}
     </title>
     {% block css %}
     {% endblock %}
+    {% block js %}
+    {% endblock %}
 </head>
 
 <body>
-  {% block content %}
-  {% endblock %}
+{% block content %}
+{% endblock %}
 </body>
+
 </html>
