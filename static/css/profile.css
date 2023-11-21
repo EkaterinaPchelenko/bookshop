@@ -35,7 +35,9 @@ input {
 }
 
 .personal_data_container {
-
+    width: clamp(150px,100%,400px);
+    min-height: 400px;
+    height: 100%;
 }
 
 .personal_data_personality {
@@ -49,8 +51,7 @@ input {
     border: 1px solid #d4d4d4;
     gap: 12px;
     align-items: center;
-    max-width: 400px;
-    width: 100%;
+    width: clamp(150px,100%,400px);
     min-height: 400px;
     height: 100%;
     padding-top: 20px;
@@ -77,12 +78,11 @@ input {
 .personal_data_personality_img {
     border-radius: 50%;
     background-color: transparent;
-    max-width: 200px;
-    height: 100%;
+    height: clamp(100px,100%,200px);
+    width: clamp(100px,100%,200px);
     object-fit: cover;
     object-position: center;
     cursor: pointer;
-    width: 100%;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -91,14 +91,19 @@ input {
     margin:0 auto;
     font-family: 'Playfair Display', serif;
     color: #4d3334;
-    font-size: 30px;
+    font-size: clamp(10px,30px,30px);
     font-weight: 300;
     margin: 0 50px;
     text-align: center;
+    width: clamp(100px,100%,230px);
 }
 
 .personal_data_personality_user-name:hover {
     text-decoration:none;
+}
+
+.u-personal_data_contact-information {
+    width: clamp(100px,100%,350px);
 }
 
 .personal_data_contact-information {
@@ -108,8 +113,7 @@ input {
     border: 1px solid #d4d4d4;
     gap: 60px;
     align-items: center;
-    max-width:600px;
-    width: 100%;
+    width: clamp(200px,100%,600px);
     min-height: 400px;
     height: 100%;
     padding-top: 20px;
@@ -130,15 +134,18 @@ input {
     display: block;
     margin: 0 20px;
     box-sizing: border-box;
+    width: clamp(100px,100%,300px);
 }
 
 .address__list-item {
     list-style-type: none;
     word-spacing: 5px;
+    width: clamp(50%,100%,280px);
 }
 
 .form-control {
     width: 100%;
+    width: clamp(50%,100%,300px);
 }
 
 .address__list-item-text {
@@ -153,14 +160,15 @@ span {
     bottom: 0;
     display: flex;
     height: 100%;
-    width: 100%;
+    width: clamp(50%,100%,430px);
     justify-content: center;
     padding: 0 140px;
 }
 
 .u-change_data_button {
     font-weight: 400;
-    width: 100%;
+    width: clamp(50%,100%,430px);
+    font-size: clamp(50%,100%,18px);
 }
 
 .busket_and_liked_product {
@@ -188,6 +196,7 @@ span {
   display: flex;
   flex-direction: column;
   height: 500px;
+  width: clamp(650px,100%,950px);
   overflow-y: auto;
   overflow-x: hidden;
   position: relative;
@@ -323,6 +332,7 @@ span {
     display: block;
     margin-bottom: 40px;
     box-sizing: border-box;
+    width: clamp(650px,100%,950px);
 }
 
 .liked_product_heading {
