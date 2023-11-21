@@ -4,6 +4,8 @@ from django.views.generic import DetailView
 from django.views.decorators.cache import cache_page, never_cache
 
 from django.conf import settings
+
+from baskets.models import Basket
 from mainapp.models import Product, ProductCategory, ProductImage
 
 
@@ -15,10 +17,13 @@ def products(request):
 
     books = Product.objects.all()
     context = {
-        "title": "bookshop",
+        "title": "BookWorld",
         "products": books,
         "categories": ProductCategory.objects.all(),
     }
+    if request.user.is_authenticated:
+        baskets = Basket.objects.filter(user=request.user)
+        context["baskets"] = baskets
 
     return render(request, 'mainapp/products.html', context)
 

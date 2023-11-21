@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 
-from django.shortcuts import HttpResponseRedirect
+from django.shortcuts import HttpResponseRedirect, render
 from django.template.loader import render_to_string
 
 from mainapp.models import Product
@@ -28,10 +28,17 @@ def basket_add(request, product_id):
 @login_required
 def basket_remove(request, basket_id):
     Basket.objects.get(id=basket_id).delete()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    baskets = Basket.objects.filter(user=request.user)
+    context = {
+        'baskets': baskets
+    }
+    result = render_to_string('baskets/basket.html', context)
+    return JsonResponse({'result': result})
+
 
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
+
 
 @login_required()
 def basket_edit(request, id, quantity):
@@ -49,3 +56,12 @@ def basket_edit(request, id, quantity):
         }
         result = render_to_string('baskets/basket.html', context)
         return JsonResponse({'result': result})
+
+
+def basket_quantity(request):
+
+    baskets = Basket.objects.filter(user=request.user)
+    context = {
+        "baskets": baskets,
+    }
+    return render(request, 'basket/basket_quantity.html', context)
