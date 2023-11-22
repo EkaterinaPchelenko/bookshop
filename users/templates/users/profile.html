@@ -17,7 +17,7 @@
                 <div class="personal_data_container">
                     <div class="personal_data_personality">
                         <div class="personal_data_personality_card">
-                            <img width="100" height="100"
+                            <img width="200" height="200"
                                  src="{% if user.image %} {{ user.image.url }} {% else %} {% static 'vendor/img/users/default_avatar.jpg' %} {% endif %} "
                                  class="personal_data_personality_img">
                             <label class="custom-file-label" for="{{ form.image.id_for_label }}">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="personal_data_contact-information">
-                    <div>
+                    <div class="u-personal_data_contact-information">
                         <address class="contact-inf-container">
                             <ul class="address__list">
                                 <li class="address__list-item">
@@ -122,6 +122,222 @@
             <!--                            </div>-->
 
         </div>
+<!--        <div class="liked_product">-->
+<!--            <h2 class="orders_container_title">Ваши заказы</h2>-->
+<!--            <div class="busket_product_list-empty">-->
+<!--                <h3 class="summ_decoration_word-empty">Пусто &#9785</h3>-->
+
+<!--            </div>-->
+<!--        </div>-->
+
+        <div class="orders_container">
+            <h2 class="orders_container_title">Ваши заказы</h2>
+            <ul class="orders_list">
+                <li class="orders_list_item">
+                    <input type="checkbox" id="hd-1" class="hide"/>
+                    <label for="hd-1" > Заказ №1</label>
+                    <div>
+                        <ul class="order_list">
+                            <li class="order_list_item">
+                                <a href="#0" class="">
+                                  <article class="order_product_card">
+                                    <div class = "order_product_img-container">
+                                        <img class = "order_product_img" src="https://www.yolabooks.ru/storage/photo/resized/xy_1732x1732/f/92k9yf9fjs0iom0_c3f69452.jpg" alt=""  />
+                                        <div class="order_product_description_container">
+                                          <div class="order_product_description">
+                                              <h3 class="order_product_description_text">Книга1</h3>
+
+                                          </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="quantity_product">
+                                        <span>
+                                            <bdi>
+                                                2
+                                            </bdi>
+                                            <span>
+                                                шт
+                                            </span>
+                                        </span>
+
+
+                                    </div>
+                                    <div class="order_of_product">
+                                        <span>
+                                            <bdi>
+                                                550
+                                            </bdi>
+                                            <span>
+                                                ₽
+                                            </span>
+                                        </span>
+                                    </div>
+
+
+                                  </article>
+                            </a>
+                            </li>
+                            <li class="order_list_item">
+                                <a href="#0" class="">
+                                  <article class="order_product_card">
+                                    <div class = "order_product_img-container">
+                                        <img class = "order_product_img" src="https://www.yolabooks.ru/storage/photo/resized/xy_1732x1732/f/92k9yf9fjs0iom0_c3f69452.jpg" alt=""  />
+                                        <div class="order_product_description_container">
+                                          <div class="order_product_description">
+                                              <h3 class="order_product_description_text">Книга2</h3>
+
+                                          </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="quantity_product">
+                                        <span>
+                                            <bdi>
+                                                2
+                                            </bdi>
+                                            <span>
+                                                шт
+                                            </span>
+                                        </span>
+
+
+                                    </div>
+                                    <div class="order_of_product">
+                                        <span>
+                                            <bdi>
+                                                550
+                                            </bdi>
+                                            <span>
+                                                ₽
+                                            </span>
+                                        </span>
+                                    </div>
+
+
+                                  </article>
+                            </a>
+                            </li>
+                        </ul>
+                        <div class="sum_of_order">
+                            <p>Сумма заказа :</p>
+                            <span>
+                                <bdi>
+                                    1100
+                                </bdi>
+                                <span>
+                                    ₽
+                                </span>
+                            </span>
+                        </div>
+
+                    </div>
+                </li>
+                <li class="orders_list_item">
+                    <input type="checkbox" id="hd-2" class="hide"/>
+                    <label for="hd-2" > Заказ №2</label>
+                    <div>
+                        <ul class="order_list">
+                            <li class="order_list_item">
+                                <a href="#0" class="">
+                                  <article class="order_product_card">
+                                    <div class = "order_product_img-container">
+                                        <img class = "order_product_img" src="https://www.yolabooks.ru/storage/photo/resized/xy_1732x1732/f/92k9yf9fjs0iom0_c3f69452.jpg" alt=""  />
+                                        <div class="order_product_description_container">
+                                          <div class="order_product_description">
+                                              <h3 class="order_product_description_text">Книга1</h3>
+
+                                          </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="quantity_product">
+                                        <span>
+                                            <bdi>
+                                                2
+                                            </bdi>
+                                            <span>
+                                                шт
+                                            </span>
+                                        </span>
+
+
+                                    </div>
+                                    <div class="order_of_product">
+                                        <span>
+                                            <bdi>
+                                                550
+                                            </bdi>
+                                            <span>
+                                                ₽
+                                            </span>
+                                        </span>
+                                    </div>
+
+
+                                  </article>
+                            </a>
+                            </li>
+                            <li class="order_list_item">
+                                <a href="#0" class="">
+                                  <article class="order_product_card">
+                                    <div class = "order_product_img-container">
+                                        <img class = "order_product_img" src="https://www.yolabooks.ru/storage/photo/resized/xy_1732x1732/f/92k9yf9fjs0iom0_c3f69452.jpg" alt=""  />
+                                        <div class="order_product_description_container">
+                                          <div class="order_product_description">
+                                              <h3 class="order_product_description_text">Книга2</h3>
+
+                                          </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="quantity_product">
+                                        <span>
+                                            <bdi>
+                                                2
+                                            </bdi>
+                                            <span>
+                                                шт
+                                            </span>
+                                        </span>
+
+
+                                    </div>
+                                    <div class="order_of_product">
+                                        <span>
+                                            <bdi>
+                                                550
+                                            </bdi>
+                                            <span>
+                                                ₽
+                                            </span>
+                                        </span>
+                                    </div>
+
+
+                                  </article>
+                            </a>
+                            </li>
+                        </ul>
+                        <div class="sum_of_order">
+                            <p>Сумма заказа :</p>
+                            <span>
+                                <bdi>
+                                    1100
+                                </bdi>
+                                <span>
+                                    ₽
+                                </span>
+                            </span>
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
 
     </div>
 </section>
