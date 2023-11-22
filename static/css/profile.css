@@ -38,6 +38,7 @@ input {
     width: clamp(150px,100%,400px);
     min-height: 400px;
     height: 100%;
+    border: 1px solid #d4d4d4;
 }
 
 .personal_data_personality {
@@ -48,7 +49,6 @@ input {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    border: 1px solid #d4d4d4;
     gap: 12px;
     align-items: center;
     width: clamp(150px,100%,400px);
@@ -78,8 +78,7 @@ input {
 .personal_data_personality_img {
     border-radius: 50%;
     background-color: transparent;
-    height: clamp(100px,100%,200px);
-    width: clamp(100px,100%,200px);
+    width: clamp(50px,100%,200px);
     object-fit: cover;
     object-position: center;
     cursor: pointer;
