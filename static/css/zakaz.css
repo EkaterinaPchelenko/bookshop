@@ -169,7 +169,7 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
-    gap: 10px;
+    gap: 11px;
 }
 
 .HazePaymentMethod_title {
