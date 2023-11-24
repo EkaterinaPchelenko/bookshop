@@ -1,0 +1,385 @@
+
+.order-submit-section {
+    background-color: #f2f2f2;
+    font-family: "Inter", "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    text-decoration: none;
+    color: #4d3334;
+    padding: 20px;
+
+}
+
+.order-submit-section_container {
+    margin:0 auto;
+    display: table;
+    box-sizing: border-box;
+
+}
+
+.order-submit {
+    display: flex;
+    flex-direction: row;
+    width: clamp(650px, 100%, 100%);
+    align-items: flex-start;
+    justify-content: space-between;
+    margin:0 auto;
+    gap:100px;
+}
+
+.order-info-block {
+    max-width: 650px;
+    width: 100%;
+}
+
+.reciever-info-container {
+    margin: 0 0 12px 0;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-gap: 12px;
+    border-radius: 12px;
+    background: #fff;
+    position: relative;
+}
+
+.reciever_container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-gap: 12px;
+    border-radius: 12px;
+    background: #fff;
+    position: relative;
+}
+
+.reciever_heading {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.reciever-info {
+
+}
+
+.reciever_name_number_addres {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-gap: 8px;
+}
+
+
+.order-chekout-block {
+    display: flex;
+    justify-content: center;
+    min-width: 384px;
+    padding: 16px;
+    background: #fff;
+    border-radius: 8px;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.chekout-summary-container {
+    min-width: 384px;
+    padding: 16px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.chekout-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.chekout-summary_word {
+    font-size: 20px !important;
+    font-weight:600;
+    color:#121212;
+    margin:0 !important;
+}
+
+.chekout-summary_word:hover {
+    text-decoration:none;
+}
+
+.chekout-summary_count_and_price {
+    font-size: 15px !important;
+    color: #212121;
+    margin: 0 !important;
+}
+
+.chekout-summary_count_and_price:hover {
+    text-decoration:none;
+}
+
+.CheckoutSummary_SummaryButton {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    border-radius: 6px;
+    padding: 0 30px 0 16px;
+    background: #f550be;
+    border-color: #f550be;
+    cursor: pointer;
+    border-style: none;
+    color:#000;
+}
+
+.CheckoutSummary_SummaryButton__textContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.CheckoutSummary_SummaryButton_Arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+    stroke-width: 2px;
+}
+
+.payment_method_block {
+    margin: 0 0 12px 0;
+    width:100%;
+}
+
+.payment_method_container {
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.HazePaymentMethod_title_container {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.HazePaymentMethod_title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.HazePaymentMethod_ManageBankBadges_container {
+    display: flex;
+    width: 100%;
+}
+
+.HazePaymentMethod_ManageBankBadges__item {
+    background-color: #f8fafc;
+    position: relative;
+    margin-right: 8px;
+    padding: 8px;
+    width: 100%;
+    max-width: 50%;
+    border: 1px solid #e6eaf0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.HazePaymentMethod_ManageBankBadges__row_ {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.HazePaymentMethod_ManageBankBadges__icons_ {
+    display: flex;
+    align-items: center;
+}
+
+.HazePaymentMethod_ManageBankBadges__icon_ {
+    width: 24px;
+    height: 24px;
+}
+
+.haze-radio_Radio__label_ {
+    pointer-events: none;
+    flex-direction: row;
+    justify-content: end;
+    grid-gap: 6px;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+}
+
+.haze-radio_Radio__default_ {
+    border-color: #cdd5df;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    font-family: Inter;
+    width: auto;
+}
+
+.haze-radio_Radio__radioContainer_ {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+
+.haze-radio_ {
+    align-items: center;
+    background-color: #222223;
+    border: none;
+    display: flex;
+    justify-content: center;
+    content: url(https://st.aliexpress.ru/mixer-storage/ui-kit/radio-button/check-l.svg);
+    height: 20px;
+    width: 20px;
+    transition: background-color .25ms ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #cdd5df;
+    border-radius: 50%;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin: 0;
+    outline: none;
+    position: relative;
+}
+
+.haze-radio_::after {
+
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    transition: background-color .25ms ease-in-out;
+}
+
+.order_Container__size_full_ {
+    margin: 0 0 12px 0;
+    width: 100%;
+}
+
+.CheckoutItemList__container_ {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.CheckoutItemList_S_title {
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    margin-bottom: 12px !important;
+    margin-top: 0 !important;
+}
+
+.CheckoutItemList_StoreList__storeList_ {
+    margin-bottom: 20px;
+}
+
+.CheckoutItemList_StoreList__storeList_:last-child {
+    margin-bottom: 0;
+}
+
+.CheckoutItemList__productContainer_ {
+    display: flex;
+    padding: 10px 0 15px;
+    flex-direction: row;
+}
+
+.CheckoutItemList__productImage_ {
+    position: relative;
+    display: flex;
+    width: 120px;
+    height: calc(120px * 1.5);
+}
+
+.CheckoutItemList_Product__backgroundLayer_ {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.CheckoutItemList_Product__pictures_ {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.CheckoutItemList_Product_description {
+    flex: 1 1;
+    padding-left: 25px;
+    text-align:center;
+}
+
+.CheckoutItemList_Product__productTitle_ {
+    max-width: 300px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    line-height: 20px;
+}
+
+.CheckoutItemList_Product__productTitle_category {
+    font-size: 16px !important;
+    word-spacing: 1px;
+}
+
+.CheckoutItemList_ProductPrice_ {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.CheckoutItemList_ProductPrice__costMain_ {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.CheckoutItemList_ProductPrice__mainCostPrice {
+    padding-right: 0;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: .005em;
+    position: relative;
+    font-family: Inter,Open Sans,sans-serif;
+    font-style: normal
+}
+
+.CheckoutItemList_ProductCount_container_ {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    text-align: right;
+}
