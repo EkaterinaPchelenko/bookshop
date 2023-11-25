@@ -25,4 +25,15 @@ window.onload = function (){
         });
         event.preventDefault()
     });
+    $('.products').on('click', 'a[id="add"]', function () {
+        let t_href = event.target;
+        console.log(t_href.name);
+
+        $.ajax({
+            url: '/baskets/add/' + t_href.name + '/',
+            success: function (data) {
+                $('.products').html(data.result)
+            },
+        });
+    });
 };
