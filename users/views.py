@@ -8,6 +8,7 @@ from django.views.generic import UpdateView, FormView
 
 from baskets.models import Basket
 from bookshop.mixin import BaseClassContextMixin
+from likes.models import Like
 from users.forms import UserRegisterForm, UserLoginForm, UserProfileForm
 from users.models import User
 
@@ -52,6 +53,8 @@ class ProfileFormView(UpdateView):
     def get_context_data(self, **kwargs):
         context = super(ProfileFormView, self).get_context_data(**kwargs)
         context['baskets'] = Basket.objects.filter(user=self.request.user)
+        context['likes'] = Like.objects.filter(user=self.request.user)
+
         return context
 
     def post(self, request, *args, **kwargs):

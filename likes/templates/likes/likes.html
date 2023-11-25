@@ -1,0 +1,58 @@
+<div class="like_product">
+    <h2 class="liked_product_heading">Избранное</h2>
+    {% if likes %}
+    <div>
+        <ul class="liked_list">
+            {% for like in likes %}
+            <li class="liked_list_item">
+                <article class="liked_product_card">
+                    <div class="liked_product_img-container">
+                        <img class="liked_product_img"
+                             src="{{like.product.image}}"
+                             alt=""/>
+
+                    </div>
+                    <div class="liked_product_description_container">
+                        <div class="liked_product_description">
+                            <a href="{% url 'products:detail' like.product.id %}" class="">{{like.product.name}}</a>
+                            <p class="">{{like.product.category}}</p>
+                            <span>
+                                <bdi>
+                                    {{ like.product.price }}
+                                </bdi>
+                                <span>
+                                    ₽
+                                </span>
+                            </span>
+                        </div>
+
+                        <button class="button_liked_product" type="button">
+                            <svg width="25" height="20" viewBox="0 -1 22 20" fill="none">
+                                <path id="{{like.id}}" type="like" d="M16.749 0C13.875 0 12.676 2.75 11 2.75C9.324 2.75 8.12498 0 5.25098 0C2.52898 0 0 2.29099 0 5.38199C0 11.114 9.794 14.861 11 18C12.206 14.86 22 11.114 22 5.38199C22 2.29099 19.471 0 16.749 0Z"
+                                      fill="#c70000" stroke="#c70000"
+                                      data-spm-anchor-id="a2g2w.detail.0.i3.263872f6fDcHOp">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+
+                </article>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+    {% else %}
+    <div class="busket_product_list-empty">
+        <h3 class="summ_decoration_word-empty">Пусто &#9785</h3>
+        <div class="button_order-container-empty">
+            <a href="/products/" type="submit"
+               class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2">
+                Перейти в каталог
+
+            </a>
+        </div>
+
+    </div>
+    {% endif %}
+</div>

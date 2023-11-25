@@ -61,12 +61,23 @@ class ProductDetail(DetailView):
     context_object_name = 'product'
 
     def get_context_data(self, category_id=None, *args, **kwargs):
+        product_liked = []
+        product_in_basket = []
         context = super().get_context_data()
+        for product in Product.objects.all():
+            for like in Like.objects.all():
+                if product.id == like.product_id:
+                    product_liked.append(product.id)
+            for basket in Basket.objects.all():
+                if product.id == basket.product_id:
+                    product_in_basket.append(product.id)
 
         context['product'] = get_product(self.kwargs.get('pk'))
         context['images'] = ProductImage.objects.filter(product_id=context['product'].id)
         context['categories'] = ProductCategory.objects.all()
         context['im_len'] = len(context['images'])
         context['first_im'] = context['images'][0]
+        context['product_liked'] = product_liked
+        context['product_in_basket'] = product_in_basket
         return context
 # Create your views here.

@@ -25,15 +25,15 @@ def like_action(request, product_id):
     context = {
         'likes': likes
     }
-    result = render_to_string('mainapp/products.html')
-    return JsonResponse({'result': result}, context)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-# @login_required
-# def basket_remove(request, basket_id):
-#     Basket.objects.get(id=basket_id).delete()
-#     baskets = Basket.objects.filter(user=request.user)
-#     context = {
-#         'baskets': baskets
-#     }
-#     result = render_to_string('baskets/basket.html', context)
-#     return JsonResponse({'result': result})
+
+@login_required
+def unlike(request, like_id):
+    Like.objects.get(id=like_id).delete()
+    likes = Like.objects.filter(user=request.user)
+    context = {
+        'likes': likes
+    }
+    result = render_to_string('likes/likes.html', context)
+    return JsonResponse({'result': result})

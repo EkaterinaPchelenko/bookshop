@@ -30,15 +30,16 @@ window.onload = function (){
         t_href.innerHTML = 'УДАЛИТЬ ИЗ КОРЗИНЫ';
         t_href.setAttribute("id", 'remove');
         fl_basket = document.getElementById('float_basket');
-        new_val= Number(fl_basket.getAttribute('value')) + 1;
-        fl_basket.setAttribute("value", new_val);
-
+        if (fl_basket){
+            new_val= Number(fl_basket.getAttribute('value')) + 1;
+            fl_basket.setAttribute("value", new_val);
+        }
 
         $.ajax({
             url: '/baskets/add/' + t_href.name + '/',
-//            success: function (data) {
-//                $('.products').html(data.result)
-//            },
+            success: function (data) {
+                $('.products').html(data.result)
+            },
         });
         event.preventDefault()
     });
@@ -48,14 +49,16 @@ window.onload = function (){
         t_href.innerHTML = 'ДОБАВИТЬ В КОРЗИНУ';
         t_href.setAttribute("id", 'add');
         fl_basket = document.getElementById('float_basket');
-        new_val= Number(fl_basket.getAttribute('value')) - 1;
-        fl_basket.setAttribute("value", new_val);
+        if (fl_basket){
+            new_val= Number(fl_basket.getAttribute('value')) - 1;
+            fl_basket.setAttribute("value", new_val);
+        }
 
         $.ajax({
             url: '/baskets/remove_from_products/' + t_href.name + '/',
-//            success: function (data) {
-//                $('.products').html(data.result)
-//            },
+            success: function (data) {
+                $('.products').html(data.result)
+            },
         });
         event.preventDefault()
     });
@@ -78,5 +81,20 @@ window.onload = function (){
                 $('.products').html(data.result)
             },
         });
+    });
+    $('.like_product').on('click', 'path[type="like"]', function () {
+        let t_href = event.target;
+        console.log(t_href.id);
+
+
+
+
+        $.ajax({
+            url: '/likes/unlike/' + t_href.id + '/',
+            success: function (data) {
+                $('.like_product').html(data.result)
+            },
+        });
+        event.preventDefault()
     });
 };
