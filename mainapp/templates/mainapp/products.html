@@ -90,12 +90,20 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                         <p class="u-text u-text-2">{{product.author.name}}</p>
                         <a class="u-active-none u-border-hover-palette-2-base u-border-none u-button-style u-hover-none u-none u-text-body-color u-btn-1"> {{product.price}} Руб</a>
                         <div class="busket_liked_container">
-                          <a name="{{product.id}}" id="add" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> ДОБАВИТЬ В КОРЗИНУ</a>
+                          {% if product.id in product_in_basket %}
+                            <a name="{{product.id}}" id="remove" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> УДАЛИТЬ ИЗ КОРЗИНЫ</a>
+                          {% else %}
+                            <a name="{{product.id}}" id="add" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> ДОБАВИТЬ В КОРЗИНУ</a>
+                          {% endif %}
                           <button class="button_liked_product" type="button">
                             <svg width="25" height="20" viewBox="0 -1 22 20" fill="none">
-                              <path d="M16.749 0C13.875 0 12.676 2.75 11 2.75C9.324 2.75 8.12498 0 5.25098 0C2.52898 0 0 2.29099 0 5.38199C0 11.114 9.794 14.861 11 18C12.206 14.86 22 11.114 22 5.38199C22 2.29099 19.471 0 16.749 0Z" fill="#fff" stroke="#c70000" data-spm-anchor-id="a2g2w.detail.0.i3.263872f6fDcHOp">
-
-                              </path>
+                              {% if product.id in product_liked %}
+                                <path id="{{product.id}}" type="like" stroke="#c70000" d="M16.749 0C13.875 0 12.676 2.75 11 2.75C9.324 2.75 8.12498 0 5.25098 0C2.52898 0 0 2.29099 0 5.38199C0 11.114 9.794 14.861 11 18C12.206 14.86 22 11.114 22 5.38199C22 2.29099 19.471 0 16.749 0Z" fill="#c70000" data-spm-anchor-id="a2g2w.detail.0.i3.263872f6fDcHOp">
+                                </path>
+                              {% else %}
+                                <path id="{{product.id}}" type="like" stroke="#c70000" d="M16.749 0C13.875 0 12.676 2.75 11 2.75C9.324 2.75 8.12498 0 5.25098 0C2.52898 0 0 2.29099 0 5.38199C0 11.114 9.794 14.861 11 18C12.206 14.86 22 11.114 22 5.38199C22 2.29099 19.471 0 16.749 0Z" fill="#fff" data-spm-anchor-id="a2g2w.detail.0.i3.263872f6fDcHOp">
+                                </path>
+                              {% endif %}
                             </svg>
 <!--                            <svg width="25" height="20" viewBox="0 -1 22 20" fill="none">-->
 <!--                              <path d="M16.749 0C13.875 0 12.676 2.75 11 2.75C9.324 2.75 8.12498 0 5.25098 0C2.52898 0 0 2.29099 0 5.38199C0 11.114 9.794 14.861 11 18C12.206 14.86 22 11.114 22 5.38199C22 2.29099 19.471 0 16.749 0Z" fill="#c70000" stroke="#c70000" data-spm-anchor-id="a2g2w.detail.0.i3.263872f6fDcHOp">-->
@@ -139,16 +147,13 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
             <div class="float-block-container">
                   <div class="float-block">
                     <a href="{% url 'users:profile' %}" class="busket_icon">
-                      <i class="fa badge fa-lg" value="{{baskets.0.total_quantity}}">&#xf290;</i>
+                      <i id="float_basket" class="fa badge fa-lg" value="{{baskets.0.total_quantity}}">&#xf290;</i>
 
                     </a>
 
                   </div>
             </div>
           {% endif %}
-
-
-
     </section>
 </div>
 

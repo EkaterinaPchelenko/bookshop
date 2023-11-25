@@ -11,5 +11,3 @@ class Like(models.Model):
     def __str__(self):
         return f'Понравившийся товар для {self.user.username} | Товар {self.product.name}'
 
-
-# Create your models here.

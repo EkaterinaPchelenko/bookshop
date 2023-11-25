@@ -1,11 +1,15 @@
+from django.contrib.auth.decorators import login_required
 from django.core.cache import cache
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
+from django.template.loader import render_to_string
 from django.views.generic import DetailView
 from django.views.decorators.cache import cache_page, never_cache
 
 from django.conf import settings
 
 from baskets.models import Basket
+from likes.models import Like
 from mainapp.models import Product, ProductCategory, ProductImage
 
 
@@ -14,12 +18,24 @@ def index(request):
 
 
 def products(request):
+    product_in_basket = []
+    product_liked = []
+
+    for product in Product.objects.all():
+        for basket in Basket.objects.all():
+            if product.id == basket.product_id:
+                product_in_basket.append(product.id)
+        for like in Like.objects.all():
+            if product.id == like.product_id:
+                product_liked.append(product.id)
 
     books = Product.objects.all()
     context = {
         "title": "BookWorld",
         "products": books,
         "categories": ProductCategory.objects.all(),
+        "product_in_basket": product_in_basket,
+        "product_liked": product_liked,
     }
     if request.user.is_authenticated:
         baskets = Basket.objects.filter(user=request.user)
