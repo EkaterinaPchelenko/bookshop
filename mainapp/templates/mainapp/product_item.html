@@ -68,19 +68,31 @@
                         </div>
                         <div class="u-product-control u-product-desc u-text u-text-2">{{ product.description}}</div>
                         <div class="buttons-container">
-
+                            {% if not user.is_authenticated %}
+                            <a name="{{product.id}}" href="{% url 'users:login'%}"
+                               class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2">
+                                ДОБАВИТЬ В КОРЗИНУ</a>
+                            {% else %}
                             {% if product.id in product_in_basket %}
-                            <a name="{{product.id}}" id="remove"
+                            <a name="{{product.id}}" value="{{user.is_authenticated}}" id="remove"
                                class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2">
                                 УДАЛИТЬ ИЗ КОРЗИНЫ</a>
                             {% else %}
-                            <a name="{{product.id}}" id="add"
+                            <a name="{{product.id}}" value="{{user.is_authenticated}}" id="add"
                                class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2">
                                 ДОБАВИТЬ В КОРЗИНУ</a>
+                            {% endif %}
                             {% endif %}
 
                             <button class="button_liked_product" type="button">
                                 <svg width="25" height="20" viewBox="0 -1 22 20" fill="none">
+                                    {% if not user.is_authenticated %}
+                                    <path id="{{product.id}}" onclick="location.href='{% url 'users:login'%}'"
+                                          stroke="#c70000"
+                                          d="M16.749 0C13.875 0 12.676 2.75 11 2.75C9.324 2.75 8.12498 0 5.25098 0C2.52898 0 0 2.29099 0 5.38199C0 11.114 9.794 14.861 11 18C12.206 14.86 22 11.114 22 5.38199C22 2.29099 19.471 0 16.749 0Z"
+                                          fill="#fff" data-spm-anchor-id="a2g2w.detail.0.i3.263872f6fDcHOp">
+                                    </path>
+                                    {% else %}
                                     {% if product.id in product_liked %}
                                     <path id="{{product.id}}" type="like" stroke="#c70000"
                                           d="M16.749 0C13.875 0 12.676 2.75 11 2.75C9.324 2.75 8.12498 0 5.25098 0C2.52898 0 0 2.29099 0 5.38199C0 11.114 9.794 14.861 11 18C12.206 14.86 22 11.114 22 5.38199C22 2.29099 19.471 0 16.749 0Z"
@@ -91,6 +103,7 @@
                                           d="M16.749 0C13.875 0 12.676 2.75 11 2.75C9.324 2.75 8.12498 0 5.25098 0C2.52898 0 0 2.29099 0 5.38199C0 11.114 9.794 14.861 11 18C12.206 14.86 22 11.114 22 5.38199C22 2.29099 19.471 0 16.749 0Z"
                                           fill="#fff" data-spm-anchor-id="a2g2w.detail.0.i3.263872f6fDcHOp">
                                     </path>
+                                    {% endif %}
                                     {% endif %}
                                 </svg>
                             </button>

@@ -28,7 +28,7 @@ window.onload = function (){
     $('.products').on('click', 'a[id="add"]', function () {
         let t_href = event.target;
         val = t_href.getAttribute('value');
-        console.log(val)
+        console.log(t_href.name)
 
         if (val == "True"){
             t_href.innerHTML = 'УДАЛИТЬ ИЗ КОРЗИНЫ';
