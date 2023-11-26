@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.core.cache import cache
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
@@ -17,9 +18,20 @@ def index(request):
     return render(request, 'mainapp/index.html')
 
 
-def products(request):
+@never_cache
+def products(request, category_id=None, page_id=1):
     product_in_basket = []
     product_liked = []
+    products = Product.objects.filter(category_id=category_id).select_related(
+        'category') if category_id != None else Product.objects.all()
+
+    paginator = Paginator(products, per_page=18)
+    try:
+        products_paginator = paginator.page(page_id)
+    except PageNotAnInteger:
+        products_paginator = paginator.page(1)
+    except EmptyPage:
+        products_paginator = paginator.page(paginator.num_pages)
 
     for product in Product.objects.all():
         for basket in Basket.objects.all():
@@ -32,7 +44,7 @@ def products(request):
     books = Product.objects.all()
     context = {
         "title": "BookWorld",
-        "products": books,
+        "products": products_paginator,
         "categories": ProductCategory.objects.all(),
         "product_in_basket": product_in_basket,
         "product_liked": product_liked,

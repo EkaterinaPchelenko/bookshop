@@ -27,9 +27,16 @@ window.onload = function (){
     });
     $('.products').on('click', 'a[id="add"]', function () {
         let t_href = event.target;
-        t_href.innerHTML = 'УДАЛИТЬ ИЗ КОРЗИНЫ';
-        t_href.setAttribute("id", 'remove');
+        val = t_href.getAttribute('value');
+        console.log(val)
+
+        if (val == "True"){
+            t_href.innerHTML = 'УДАЛИТЬ ИЗ КОРЗИНЫ';
+            t_href.setAttribute("id", 'remove');
+        }
+
         fl_basket = document.getElementById('float_basket');
+
         if (fl_basket){
             new_val= Number(fl_basket.getAttribute('value')) + 1;
             fl_basket.setAttribute("value", new_val);
@@ -46,8 +53,12 @@ window.onload = function (){
     $('.products').on('click', 'a[id="remove"]', function () {
         let t_href = event.target;
         console.log(t_href)
-        t_href.innerHTML = 'ДОБАВИТЬ В КОРЗИНУ';
-        t_href.setAttribute("id", 'add');
+        val = t_href.getAttribute('value');
+        console.log(val)
+        if (val == "True"){
+            t_href.innerHTML = 'ДОБАВИТЬ В КОРЗИНУ';
+            t_href.setAttribute("id", 'add');
+        }
         fl_basket = document.getElementById('float_basket');
         if (fl_basket){
             new_val= Number(fl_basket.getAttribute('value')) - 1;
