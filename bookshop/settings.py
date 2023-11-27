@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users',
     'baskets',
     'orders',
+    'likes',
 ]
 
 MIDDLEWARE = [
@@ -145,3 +146,5 @@ LOGIN_REDIRECT_URL = '/'
 
 LOW_CACHE = True
 
+STRIPE_PUBLIC_KEY = 'pk_test_51OH9jaKIr0c98II2jNz9feEOBXiOs1UmnYC4NMmBUlZAyVWlAADMOqAyL4XnTmcLfedJ7XkLrZgRMMhxnAJrA9do00ikaxdCr3'
+STRIPE_SECRET_KEY = 'sk_test_51OH9jaKIr0c98II2UxH6VHlOMDMOCYeGrv9Ge1bgqGCx1nQoVpQtRQnXs7yxnz42ODfT0GMg6DMI3rU1MrPawNpB00yL3Y7lUR'

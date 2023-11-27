@@ -29,6 +29,7 @@ urlpatterns = [
     path('users/', include('users.urls', namespace='users')),
     path('baskets/', include('baskets.urls', namespace='baskets')),
     path('orders/', include('orders.urls', namespace='orders')),
+    path('likes/', include('likes.urls', namespace='likes')),
 ]
 
 

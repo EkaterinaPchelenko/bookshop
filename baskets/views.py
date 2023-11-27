@@ -15,13 +15,8 @@ from django.contrib.auth.decorators import login_required
 def basket_add(request, product_id):
     user_select = request.user
     product = Product.objects.get(id=product_id)
-    baskets = Basket.objects.filter(user=user_select, product=product)
-    if not baskets.exists():
-        Basket.objects.create(user=user_select, product=product, quantity=1)
-    else:
-        basket = baskets.first()
-        basket.quantity += 1
-        basket.save()
+    Basket.objects.create(user=user_select, product=product, quantity=1)
+
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
@@ -34,6 +29,14 @@ def basket_remove(request, basket_id):
     }
     result = render_to_string('baskets/basket.html', context)
     return JsonResponse({'result': result})
+
+
+@login_required
+def basket_remove_from_products(request, product_id):
+    product = Product.objects.get(id=product_id)
+    print(Basket.objects.get(product=product))
+    Basket.objects.get(product=product).delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 def is_ajax(request):

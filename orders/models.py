@@ -10,27 +10,24 @@ from mainapp.models import Product
 
 
 class Order(models.Model):
-    FORMING = 'FM'
-    SEND_TO_PROCEED = 'STP'
     PAID = 'PD'
     PROCEEDED = 'PRD'
-    READY = 'RDY'
     CANCEL = 'CNC'
 
     ORDER_STATUS_CHOICES = (
-        (FORMING, 'формируется'),
-        (SEND_TO_PROCEED, 'отправлен на обработку'),
         (PAID, 'оплачено'),
         (PROCEEDED, 'обрабатывается'),
-        (READY, 'готов к выдаче'),
         (CANCEL, 'отмена заказа'),
 
     )
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    address = models.CharField(blank=True, max_length=256)
     created = models.DateTimeField(verbose_name='создан', auto_now_add=True)
     updated = models.DateTimeField(verbose_name='обновлён', auto_now=True)
     status = models.CharField(choices=ORDER_STATUS_CHOICES, verbose_name='статус', max_length=3, default='')
+    # payment_id = models.CharField(max_length=100, null=True, blank=True)
+    # payment_status = models.BooleanField(default=False)
     is_active = models.BooleanField(verbose_name='активный', default=True)
 
     def __str__(self):
@@ -69,14 +66,12 @@ class OrderItem(models.Model):
         return OrderItem.objects.get(pk=pk).quantity
 
 
-@receiver(pre_delete, sender=Basket)
 @receiver(pre_delete, sender=OrderItem)
 def product_quantity_update_delete(sender, instance, **kwargs):
     instance.product.quantity += instance.quantity
     instance.save()
 
 
-@receiver(pre_save, sender=Basket)
 @receiver(pre_save, sender=OrderItem)
 def product_quantity_update_save(sender, instance, **kwargs):
     if instance.pk:
