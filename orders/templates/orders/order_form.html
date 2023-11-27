@@ -15,14 +15,14 @@
                     <div class="order-submit">
                         <div class="order-info-block">
                             <div class="reciever-info-container">
-                                <div>
+                                <div class="reciever_container-block_">
                                     <div class="reciever_container">
                                         <h3 class="reciever_heading">Получатель</h3>
                                         <div class="reciever-info">
                                             <div class="reciever_name_number_addres">
                                                 <span>{{user.first_name}} {{user.last_name}}, {{user.phone_number}}</span>
-                                                    <label for="address">Адрес:
-                                                        <input type="text" id="address" name='address' value={{user.address}}>
+                                                    <label class="reciever_label" for="address">Адрес:
+                                                        <input class="reciever_input" type="text" id="address" name='address' value={{user.address}}>
                                                     </label>
                                             </div>
 
@@ -70,9 +70,10 @@
                                 <div class="CheckoutItemList__container_">
                                     <h2 class="CheckoutItemList_S_title">Состав заказа</h2>
                                     <div class="CheckoutItemList_StoreList__storeList_">
+                                        {% for basket in baskets %}
                                         <div data-product="true">
                                             <div class="CheckoutItemList__productContainer_">
-                                                {% for basket in baskets %}
+
                                                     <div class="CheckoutItemList__productImage_">
                                                         <a href="#" target="_blank" rel="noreferrer">
                                                             <div class="CheckoutItemList_Product__backgroundLayer_">
@@ -115,10 +116,12 @@
                                                         </div>
 
                                                     </div>
-                                                {% endfor %}
+
                                             </div>
 
                                         </div>
+
+                                        {% endfor %}
 
                                     </div>
 

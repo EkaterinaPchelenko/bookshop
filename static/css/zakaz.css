@@ -11,6 +11,7 @@
 
 }
 
+
 .order-submit-section_container {
     margin:0 auto;
     display: table;
@@ -29,8 +30,7 @@
 }
 
 .order-info-block {
-    max-width: 650px;
-    width: 100%;
+    width: clamp(200px, 550px, 650px);
 }
 
 .reciever-info-container {
@@ -44,6 +44,10 @@
     border-radius: 12px;
     background: #fff;
     position: relative;
+}
+
+.reciever_container-block_ {
+    width:100%;
 }
 
 .reciever_container {
@@ -64,7 +68,7 @@
 }
 
 .reciever-info {
-
+    width:95%;
 }
 
 .reciever_name_number_addres {
@@ -74,10 +78,19 @@
     grid-gap: 8px;
 }
 
+.reciever_label {
+    width:100%;
+}
+
+.reciever_input {
+    width: 100%;
+    margin-top: 5px;
+}
 
 .order-chekout-block {
     display: flex;
     justify-content: center;
+    width: clamp(384px, 416px, 650px);
     min-width: 384px;
     padding: 16px;
     background: #fff;
@@ -390,6 +403,7 @@
         /* Новые стили при ширине окна просмотра <= 850px */
     }
     .order-chekout-block {
+        max-width:550px;
         width:100%;
     }
     .chekout-summary-container {
