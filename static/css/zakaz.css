@@ -383,3 +383,16 @@
     box-sizing: border-box;
     text-align: right;
 }
+
+@media (max-width: 850px) {
+    .order-submit {
+            flex-direction: column;
+        /* Новые стили при ширине окна просмотра <= 850px */
+    }
+    .order-chekout-block {
+        width:100%;
+    }
+    .chekout-summary-container {
+        width:100%;
+    }
+}
