@@ -808,3 +808,19 @@ svg path:hover {
     font-size: 20px;
     font-weight: 500;
 }
+
+@media (max-width: 850px) {
+    .personal_data {
+            flex-direction: column;
+        /* Новые стили при ширине окна просмотра <= 850px */
+    }
+    .personal_data_contact-information {
+        width:100%;
+    }
+    .personal_data_personality_card {
+        width:100%;
+    }
+    .personal_data_container {
+        width:100%;
+    }
+}
