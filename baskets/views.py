@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.http import JsonResponse
 
 from django.shortcuts import HttpResponseRedirect, render
@@ -48,14 +49,17 @@ def basket_edit(request, id, quantity):
     if is_ajax(request=request):
         basket = Basket.objects.get(id=id)
         if quantity > 0:
-            basket.quantity = quantity
-            basket.save()
+            if (basket.product.quantity - basket.quantity) > 0:
+                basket.quantity = quantity
+                basket.save()
+            # else:
+            #     messages.warning(request, 'Количество данного товара ограничено на складе!')
         else:
             basket.delete()
 
         baskets = Basket.objects.filter(user=request.user)
         context = {
-            'baskets': baskets
+            'baskets': baskets,
         }
         result = render_to_string('baskets/basket.html', context)
         return JsonResponse({'result': result})

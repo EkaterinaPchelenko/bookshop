@@ -21,7 +21,13 @@ class Basket(models.Model):
 
     def total_sum(self):
         baskets = Basket.objects.filter(user=self.user)
-        return sum(basket.sum() for basket in baskets)
+        total_sum = 0
+        for basket in baskets:
+            if basket.product.quantity > 0:
+                print(basket.product)
+                total_sum += basket.sum()
+
+        return total_sum
 
     def total_quantity(self):
         baskets = Basket.objects.filter(user=self.user)

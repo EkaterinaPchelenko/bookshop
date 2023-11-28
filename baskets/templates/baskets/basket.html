@@ -54,15 +54,20 @@
                             </span>
                     </td>
                     <td class="product-quantity" data-title="Количество">
-                        <div class="quantity" bis_skin_checked="1">
-                            <label class="screen-reader-text">Количество товара книга1</label>
-                            <input id="quantity" name="{{ basket.id }}" class="input-text qty text" type="number"
-                                   step="1" min="0"
-                                   value="{{basket.quantity}}" title="Кол-во"
-                                   size="4" placeholder inputmode="numeric" autocomplete="off">
-                        </div>
+                        {% if basket.product.quantity > 0 %}
+                            <div class="quantity" bis_skin_checked="1">
+                                <label class="screen-reader-text">Количество товара книга1</label>
+                                <input id="quantity" name="{{ basket.id }}" class="input-text qty text" type="number"
+                                       step="1" min="0"
+                                       value="{{basket.quantity}}" title="Кол-во"
+                                       size="4" placeholder inputmode="numeric" autocomplete="off">
+                            </div>
+                        {% else %}
+                            <p>Товар распродан</p>
+                        {% endif %}
                     </td>
                     <td class="product-subtotal" data-title="Подытог">
+                        {% if basket.product.quantity > 0 %}
                             <span>
                                 <bdi>
                                     {{ basket.sum }}
@@ -71,6 +76,10 @@
                                     ₽
                                 </span>
                             </span>
+                        {% else %}
+                            <p> ---------------- </p>
+                        {% endif %}
+
                     </td>
                 </tr>
                 </tbody>

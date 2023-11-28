@@ -71,6 +71,7 @@
                                     <h2 class="CheckoutItemList_S_title">Состав заказа</h2>
                                     <div class="CheckoutItemList_StoreList__storeList_">
                                         {% for basket in baskets %}
+                                        {% if basket.product.quantity > 0 %}
                                         <div data-product="true">
                                             <div class="CheckoutItemList__productContainer_">
 
@@ -120,7 +121,7 @@
                                             </div>
 
                                         </div>
-
+                                        {% endif %}
                                         {% endfor %}
 
                                     </div>

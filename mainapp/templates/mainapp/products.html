@@ -90,14 +90,18 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                         <p class="u-text u-text-2">{{product.author.name}}</p>
                         <a class="u-active-none u-border-hover-palette-2-base u-border-none u-button-style u-hover-none u-none u-text-body-color u-btn-1"> {{product.price}} Руб</a>
                         <div class="busket_liked_container">
-                          {% if not user.is_authenticated %}
-                            <a name="{{product.id}}" href="{% url 'users:login'%}" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> ДОБАВИТЬ В КОРЗИНУ</a>
-                          {% else %}
-                            {% if product.id in product_in_basket %}
-                              <a name="{{product.id}}" value="{{user.is_authenticated}}" id="remove" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> УДАЛИТЬ ИЗ КОРЗИНЫ</a>
+                          {% if product.quantity > 0 %}
+                            {% if not user.is_authenticated %}
+                              <a name="{{product.id}}" href="{% url 'users:login'%}" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> ДОБАВИТЬ В КОРЗИНУ</a>
                             {% else %}
-                              <a name="{{product.id}}" value="{{user.is_authenticated}}" id="add" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> ДОБАВИТЬ В КОРЗИНУ</a>
+                              {% if product.id in product_in_basket %}
+                                <a name="{{product.id}}" value="{{user.is_authenticated}}" id="remove" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> УДАЛИТЬ ИЗ КОРЗИНЫ</a>
+                              {% else %}
+                                <a name="{{product.id}}" value="{{user.is_authenticated}}" id="add" class="u-align-center-xl u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-dark-2 u-palette-2-dark-1 u-radius-50 u-btn-2"> ДОБАВИТЬ В КОРЗИНУ</a>
+                              {% endif %}
                             {% endif %}
+                          {% else %}
+                            <a name="{{product.id}}" class="u-align-center-xl u-border-none u-btn-round u-button-style u-radius-50 sold-out u-btn-2"> ТОВАР РАСПРОДАН</a>
                           {% endif %}
                           <button class="button_liked_product" type="button">
                             <svg width="25" height="20" viewBox="0 -1 22 20" fill="none">
