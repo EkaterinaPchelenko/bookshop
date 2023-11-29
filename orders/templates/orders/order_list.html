@@ -1,0 +1,74 @@
+{% if orders %}
+    <div class="orders_container">
+        <h2 class="orders_container_title">Ваши заказы</h2>
+        <ul class="orders_list">
+            {% for order in orders %}
+                <li class="orders_list_item">
+                    <input type="checkbox" id="hd-1" class="hide"/>
+                    <label for="hd-1"> Заказ {{order.user}} </label>
+                    <div>
+                        <ul class="order_list">
+                            {% for item in order.orderitems.select_related %}
+                                <li class="order_list_item">
+                                    <a href="#0" class="">
+                                        <article class="order_product_card">
+                                            <div class="order_product_img-container">
+                                                <img class="order_product_img"
+                                                     src="{{item.product.image}}"
+                                                     alt=""/>
+                                                <div class="order_product_description_container">
+                                                    <div class="order_product_description">
+                                                        <h3 class="order_product_description_text">{{item.product.name}}</h3>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="quantity_product">
+                                                    <span>
+                                                        <bdi>
+                                                            {{item.quantity}}
+                                                        </bdi>
+                                                        <span>
+                                                            шт
+                                                        </span>
+                                                    </span>
+                                            </div>
+                                            <div class="order_of_product">
+                                                    <span>
+                                                        <bdi>
+                                                            {{item.product.price}}
+                                                        </bdi>
+                                                        <span>
+                                                            ₽
+                                                        </span>
+                                                    </span>
+                                            </div>
+                                        </article>
+                                    </a>
+                                </li>
+                            {% endfor %}
+
+                        </ul>
+                            <div class="sum_of_order">
+                                <p>Сумма заказа :</p>
+                                <span>
+                                    <bdi>
+                                        {{order.get_total_cost}}
+                                    </bdi>
+                                    <span>
+                                        ₽
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% else %}
+    <div class="busket_product_list-empty">
+        <h3 class="summ_decoration_word-empty">Пусто &#9785</h3>
+    </div>
+{% endif %}
