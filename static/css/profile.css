@@ -677,6 +677,7 @@ svg path:hover {
 
 .orders_container {
     width: clamp(650px,100%,950px);
+    margin-block-end: 10px;
 }
 
 .orders_container_title {
@@ -692,11 +693,11 @@ svg path:hover {
     flex-wrap: nowrap;
     gap: 20px;
     padding:0 !important;
+    overflow-y: auto;
 }
 
 .orders_list_item {
     border: 1px solid #d4d4d4;
-    min-width: 150px;
     text-align: center;
 }
 
@@ -824,3 +825,68 @@ svg path:hover {
         width:100%;
     }
 }
+
+summary::-webkit-details-marker{display:none;}
+summary::-moz-list-bullet{list-style-type:none;}
+summary::marker{display:none;}
+summary {
+   display:inline-block;
+   padding: .3em .6em .3em 1.5em;
+   font-size:1.4em;
+   cursor: pointer;
+   position: relative;
+}
+summary:before {
+  left: .3em;
+  top: .65em;
+  color: transparent;
+  background: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjM0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIzNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOC41OSAxNi4zNGw0LjU4LTQuNTktNC41OC00LjU5TDEwIDUuNzVsNiA2LTYgNnoiLz48L3N2Zz4=") no-repeat 50% 50% / 1em 1em;
+  width: 1em;
+  height: 1em;
+  content: "";
+  position: absolute;
+  transition: transform .5s;
+}
+details[open] > summary:before {
+  transform: rotateZ(90deg);
+}
+summary ~ * {
+   padding:0 1em 0 1em;
+}
+details[open] summary ~ *{
+  animation: sweep .5s ease-in-out;
+}
+@keyframes sweep {
+  0%    {opacity: 0;}
+  100%  {opacity: 1;}
+}
+summary:focus {
+  outline:0;
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.3), inset 0 0 2px rgba(0,0,0,0.3);
+}
+details{
+  display:block;
+  margin-bottom: .5rem;
+}
+.summary_class {
+    cursor:pointer;
+}
+
+
+.orders_list {
+  /* плашка-бегунок и фон */
+  scrollbar-color: rgb(252,236,225, 0.9) #662f32;
+}
+.orders_list::-webkit-scrollbar {
+  width: 11px; /* в основном для вертикальных полос прокрутки */
+  height: 11px; /* в основном для горизонтальных полос прокрутки */
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 4px #ccc
+}
+.orders_list::-webkit-scrollbar-thumb { /* плашка-бегунок */
+  background: rgb(252,236,225, 0.9);
+  border-radius: 50px;
+  position: relative;
+}
+.orders_list::-webkit-scrollbar-track { /* фон */
+  background: #662f32;
