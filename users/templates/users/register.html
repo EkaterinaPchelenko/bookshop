@@ -15,7 +15,7 @@
                         {{ form.errors | escape }}
 
                 </div>
-                {% endif %}
+              {% endif %}
                 <form class="form-users" action="{% url 'users:register' %}" method="post">
                     {% csrf_token%}
                     <label for="{{ form.username.id_for_label }}" class="visually-hidden">Логин</label>

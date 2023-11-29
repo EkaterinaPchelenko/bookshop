@@ -28,7 +28,12 @@ class RegisterListView(FormView, BaseClassContextMixin):
             form.save()
             messages.success(request, 'Подравляем! Вы успешно прошли регистрацию!')
             return redirect(self.success_url)
-        return redirect(self.success_url)
+        print(form.errors)
+        context = {
+            'title': 'BookWorld - Регистрция',
+            'form': form
+        }
+        return render(request, 'users/register.html', context)
 
 
 class LoginListView(LoginView, BaseClassContextMixin):
