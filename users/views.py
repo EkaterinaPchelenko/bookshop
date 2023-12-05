@@ -58,9 +58,7 @@ class ProfileFormView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super(ProfileFormView, self).get_context_data(**kwargs)
-        context['baskets'] = Basket.objects.filter(user=self.request.user)
         context['likes'] = Like.objects.filter(user=self.request.user)
-        context['orders'] = Order.objects.filter(user=self.request.user)
 
         return context
 
@@ -70,6 +68,19 @@ class ProfileFormView(UpdateView):
             form.save()
             return redirect(self.success_url)
         return redirect(self.success_url)
+
+
+@login_required()
+def basket_order(request):
+    baskets = Basket.objects.filter(user=request.user)
+    orders = Order.objects.filter(user=request.user)
+    context = {
+        "title": "BookWorld | Корзина",
+        "baskets": baskets,
+        "orders": orders
+    }
+    return render(request, 'users/basket_order.html', context)
+
 
 
 class Logout(LogoutView):

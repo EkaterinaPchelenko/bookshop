@@ -49,9 +49,9 @@ def products(request, category_id=None, page_id=1):
         "product_in_basket": product_in_basket,
         "product_liked": product_liked,
     }
-    if request.user.is_authenticated:
-        baskets = Basket.objects.filter(user=request.user)
-        context["baskets"] = baskets
+    # if request.user.is_authenticated:
+    #     baskets = Basket.objects.filter(user=request.user)
+    #     context["baskets"] = baskets
 
     return render(request, 'mainapp/products.html', context)
 

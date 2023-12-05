@@ -1,6 +1,6 @@
-{% if orders %}
-    <div class="orders_container">
-        <h2 class="orders_container_title">Ваши заказы</h2>
+ <div class="orders_container">
+     <h2 class="orders_container_title">Ваши заказы</h2>
+     {% if orders %}
         <div class="orders_list">
             {% for order in orders %}
                 <details class="orders_list_item">
@@ -66,9 +66,9 @@
                     </details>
             {% endfor %}
         </div>
-    </div>
 {% else %}
     <div class="busket_product_list-empty">
         <h3 class="summ_decoration_word-empty">Пусто &#9785</h3>
     </div>
 {% endif %}
+ </div>
