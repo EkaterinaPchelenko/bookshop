@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.generic import TemplateView
 
 import users
 from users.views import LoginListView, RegisterListView, ProfileFormView, Logout, basket_order
@@ -10,4 +11,7 @@ urlpatterns = [
     path('register/', RegisterListView.as_view(), name='register'),
     path('login/', LoginListView.as_view(), name='login'),
     path('logout/', Logout.as_view(), name='logout'),
+
+    path('verify/<str:email>/<str:activation_key>/', RegisterListView.verify, name='verify')
+
 ]

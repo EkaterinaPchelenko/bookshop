@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+from config import EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -145,6 +147,17 @@ LOGIN_URL = '/users/login'
 LOGIN_REDIRECT_URL = '/'
 
 LOW_CACHE = True
+
+DOMAIN_NAME = 'http:/localhost:8000'
+EMAIL_HOST_USER = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'localhost'
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 STRIPE_PUBLIC_KEY = 'pk_test_51OH9jaKIr0c98II2jNz9feEOBXiOs1UmnYC4NMmBUlZAyVWlAADMOqAyL4XnTmcLfedJ7XkLrZgRMMhxnAJrA9do00ikaxdCr3'
 STRIPE_SECRET_KEY = 'sk_test_51OH9jaKIr0c98II2UxH6VHlOMDMOCYeGrv9Ge1bgqGCx1nQoVpQtRQnXs7yxnz42ODfT0GMg6DMI3rU1MrPawNpB00yL3Y7lUR'
