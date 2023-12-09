@@ -42818,6 +42818,25 @@ u-social-url:focus {
     padding-left: 14px;
 }
 
-.busket_icon:hover {
-    color: #a14040;
+.u-menu .u-nav .u-nav-item .submenu {
+    display: none; /* Прячем пункты выпадающего блока меню */
+    position:absolute;
+    background-color: #b8b8b8;
+    /* Задаем фон выпадающего блока меню */
+    width:min-content;
+}
+
+.u-menu .u-nav .u-nav-item:hover .submenu {
+    display:block; /* Отображаем подменю при наведении мыши */
+}
+
+.u-menu .u-nav .u-nav-item:acive .submenu {
+    display:block; /* Отображаем подменю при наведении мыши */
+    border-color: #000;
+    text-align:center;
+}
+
+.u-nav-item-basket {
+    width:min-content;
+    display:block;
 }
