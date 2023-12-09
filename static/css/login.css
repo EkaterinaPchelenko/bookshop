@@ -97,7 +97,7 @@ form {
 }
 
 .u-section-login {
-display: flex;
+    display: flex;
     flex-direction: column;
     gap: 30px;
     justify-content: center;

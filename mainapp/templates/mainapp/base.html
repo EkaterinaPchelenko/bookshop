@@ -62,7 +62,7 @@
                                     </a>
                                 </li>
                                 <li class="u-nav-item-basket">
-                                    <a class="u-border-2 u-border-active-palette-2-dark-3 u-border-hover-palette-1-dark-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-2-dark-3 u-text-hover-palette-1-dark-1 u-text-palette-2-dark-2" href="#" style="padding: 10px 0px;">
+                                    <a class="u-border-2 u-border-active-palette-2-dark-3 u-border-hover-palette-1-dark-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-2-dark-3 u-text-hover-palette-1-dark-1 u-text-palette-2-dark-2" href="{% url 'users:basket_order' %}" style="padding: 10px 0px;">
                                         Корзина
                                     </a>
                                 </li>
@@ -89,7 +89,7 @@
                         {% else %}
                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="profile.html">Профиль</a></li>
                             <li class="u-nav-item">
-                                    <a class="u-button-style u-nav-link" href="{% url 'users:profile' %}" style="padding: 10px 0px;">
+                                    <a class="u-button-style u-nav-link" href="{% url 'users:basket_order' %}" style="padding: 10px 0px;">
                                         Корзина
                                     </a>
                             </li>
