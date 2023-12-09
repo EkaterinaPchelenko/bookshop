@@ -22,10 +22,9 @@ from django.urls import path, include
 import mainapp.views as mainapp
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('', mainapp.index, name='index'),
     path('products/', include('mainapp.urls', namespace='products')),
-    path('admin/', admin.site.urls),
     path('users/', include('users.urls', namespace='users')),
     path('baskets/', include('baskets.urls', namespace='baskets')),
     path('orders/', include('orders.urls', namespace='orders')),
