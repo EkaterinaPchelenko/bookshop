@@ -71,7 +71,7 @@
                         <li class="u-nav-item"><a class="u-border-2 u-border-active-palette-2-dark-3 u-border-hover-palette-1-dark-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-2-dark-3 u-text-hover-palette-1-dark-1 u-text-palette-2-dark-2" href="{% url 'users:logout'%}" style="padding: 10px 0px;">Выйти</a></li>
                         {% if user.is_staff %}
                             <li class="u-nav-item">
-                                <a class="u-border-2 u-border-active-palette-2-dark-3 u-border-hover-palette-1-dark-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-2-dark-3 u-text-hover-palette-1-dark-1 u-text-palette-2-dark-2" href="" style="padding: 10px 0px;">
+                                <a class="u-border-2 u-border-active-palette-2-dark-3 u-border-hover-palette-1-dark-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-2-dark-3 u-text-hover-palette-1-dark-1 u-text-palette-2-dark-2" href="{% url 'admins:index'%}" style="padding: 10px 0px;">
                                     &#9881
                                 </a>
                             </li>
@@ -98,7 +98,7 @@
                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:logout'%}">Выйти</a></li>
                             {% if user.is_staff %}
                                 <li class="u-nav-item">
-                                    <a class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link" href="" style="padding: 10px 0px;">
+                                    <a class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link" href="{% url 'admins:index'%}" style="padding: 10px 0px;">
                                         &#9881
                                     </a>
                                 </li>
