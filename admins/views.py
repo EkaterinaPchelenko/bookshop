@@ -7,9 +7,10 @@ from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
-from admins.forms import UserAdminRegisterForm, UserAdminProfileForm, CategoryEditForm, ProductEditForm, AuthorEditForm
+from admins.forms import UserAdminRegisterForm, UserAdminProfileForm, CategoryEditForm, ProductEditForm, AuthorEditForm, \
+    AddEditForm
 from users.models import User
-from mainapp.models import Product, ProductCategory, Author
+from mainapp.models import Product, ProductCategory, Author, Adds
 
 
 def index(request):
@@ -60,6 +61,57 @@ class UserDeleteView(DeleteView):
         self.object = self.get_object()
         self.object.is_active = False
         self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+
+class AddListView(ListView):
+    model = Adds
+    template_name = 'admins/admin-adds-read.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(AddListView, self).get_context_data(**kwargs)
+        context['title'] = 'Админка | Реклама'
+        return context
+
+
+class AddCreateView(CreateView):
+    model = Adds
+    template_name = 'admins/admin-adds-create.html'
+    form_class = AddEditForm
+    success_url = reverse_lazy('admins:admins_add')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(AddCreateView, self).get_context_data(**kwargs)
+        context['title'] = 'Админка | Создание рекламы'
+        return context
+
+
+class AddUpdateView(UpdateView):
+    model = Adds
+    template_name = 'admins/admin-adds-update-delete.html'
+    form_class = AddEditForm
+    context_object_name = 'add'
+    success_url = reverse_lazy('admins:admins_add')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(AddUpdateView, self).get_context_data(**kwargs)
+        context['title'] = 'Админка | Обновление рекламы'
+        return context
+
+
+class AddDeleteView(DeleteView):
+    model = Adds
+    template_name = 'admins/admin-adds-update-delete.html'
+    success_url = reverse_lazy('admins:admins_add')
+
+    @method_decorator(user_passes_test(lambda u: u.is_superuser))
+    def dispatch(self, request, *args, **kwargs):
+        return super(AddDeleteView, self).dispatch(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        Adds.objects.filter(id=self.object.id).delete()
+
         return HttpResponseRedirect(self.get_success_url())
 
 

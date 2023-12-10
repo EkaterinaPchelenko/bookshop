@@ -11,7 +11,7 @@ from django.conf import settings
 
 from baskets.models import Basket
 from likes.models import Like
-from mainapp.models import Product, ProductCategory, ProductImage
+from mainapp.models import Product, ProductCategory, ProductImage, Adds
 
 
 def index(request):
@@ -25,7 +25,7 @@ def products(request, category_id=None, page_id=1):
     products = Product.objects.filter(category_id=category_id).select_related(
         'category') if category_id != None else Product.objects.all()
 
-    paginator = Paginator(products, per_page=18)
+    paginator = Paginator(products, per_page=6)
     try:
         products_paginator = paginator.page(page_id)
     except PageNotAnInteger:
@@ -41,14 +41,17 @@ def products(request, category_id=None, page_id=1):
             if product.id == like.product_id:
                 product_liked.append(product.id)
 
-    books = Product.objects.all()
+    adds = Adds.objects.all()
     context = {
         "title": "BookWorld",
         "products": products_paginator,
         "categories": ProductCategory.objects.all(),
         "product_in_basket": product_in_basket,
         "product_liked": product_liked,
+        "adds": adds,
     }
+    context['first_add'] = context['adds'][0]
+    context['len_add'] = len(context['adds'])
     if request.user.is_authenticated:
         baskets = Basket.objects.filter(user=request.user)
         context["baskets"] = baskets
@@ -88,7 +91,7 @@ class ProductDetail(DetailView):
         context['images'] = ProductImage.objects.filter(product_id=context['product'].id)
         context['categories'] = ProductCategory.objects.all()
         context['im_len'] = len(context['images'])
-        context['first_im'] = context['images'][0]
+        # context['first_im'] = context['images'][0]
         context['product_liked'] = product_liked
         context['product_in_basket'] = product_in_basket
         return context

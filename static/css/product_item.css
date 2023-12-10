@@ -457,14 +457,12 @@
 .u-product-container {
     position: relative;
     flex: 1;
-    max-width: 100%;
-    transition-duration: inherit;
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    align-items: center;
+    display: flex;
     justify-items: center;
     height: 100%;
     gap: 80px;
+    flex-direction: row;
+    align-items: center;
 }
 
 .u-price-new {
@@ -480,4 +478,10 @@
 
 .u-buy-btn {
     margin:0 !important;
+}
+
+.u-image-container {
+    width: clamp(300px, 400px,400px);
+    display: flex;
+    min-height: 200px;
 }
