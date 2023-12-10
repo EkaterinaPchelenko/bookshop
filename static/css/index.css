@@ -230,3 +230,21 @@
     height: 340px;
   }
 }
+
+.u-svg-link_vk:hover{
+    fill:#597ba0 !important;
+}
+
+.u-svg-link_telegram:hover{
+    fill:#229ED9!important;
+}
+
+.u-svg-link_vk_path:hover{
+    fill:#597ba0;
+    stroke:#597ba0;
+}
+
+.u-svg-link_telegram_path:hover{
+    fill:#229ED9;
+    stroke:#229ED9;
+}

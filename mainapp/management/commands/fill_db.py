@@ -1,6 +1,6 @@
 import json
 from django.core.management.base import BaseCommand
-from mainapp.models import ProductCategory, Product, Author, ProductImage
+from mainapp.models import ProductCategory, Product, Author, ProductImage, Adds
 
 import json, os
 
@@ -35,6 +35,15 @@ class Command(BaseCommand):
             auth['id'] = author.get('pk')
             new_author = Author(**auth)
             new_author.save()
+
+        adds = load_from_json('mainapp/fixtures/adds.json')
+
+        Adds.objects.all().delete()
+        for add in adds:
+            ad = add.get('fields')
+            ad['id'] = add.get('pk')
+            new_add = Adds(**auth)
+            new_add.save()
 
         products = load_from_json('mainapp/fixtures/products.json')
 

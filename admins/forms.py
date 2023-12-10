@@ -2,7 +2,7 @@ from django import forms
 
 from users.forms import UserRegisterForm, UserProfileForm
 from users.models import User
-from mainapp.models import ProductCategory, Product, Author
+from mainapp.models import ProductCategory, Product, Author, Adds
 
 
 class UserAdminRegisterForm(UserRegisterForm):
@@ -34,6 +34,18 @@ class UserAdminProfileForm(UserProfileForm):
 class CategoryEditForm(forms.ModelForm):
     class Meta:
         model = ProductCategory
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super(forms.ModelForm, self).__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+            field.help_text = ''
+
+
+class AddEditForm(forms.ModelForm):
+    class Meta:
+        model = Adds
         fields = '__all__'
 
     def __init__(self, *args, **kwargs):

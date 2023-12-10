@@ -21163,7 +21163,7 @@ a.pswp__share--download:hover {
 .u-back-image {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 .u-show-text-none .u-over-slide {
@@ -41958,7 +41958,7 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-popupmenu-items.u-text-hover-custom-color-5 .u-nav-link:hover,
         .u-popupmenu-items.u-popupmenu-items.u-text-active-custom-color-5 .u-nav-link.active
         {
-            color: #d61919 !important;
+            color: #229ED9 !important;
         }
 
         .u-text-custom-color-5 .u-svg-link,
@@ -41967,7 +41967,7 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-button-style.u-button-style.active > .u-text-active-custom-color-5 .u-svg-link,
         .u-text-hover-custom-color-5:focus .u-svg-link
         {
-            fill: #d61919;
+            fill: #229ED9;
         }
 
         .u-link.u-text-custom-color-5:hover
@@ -42144,8 +42144,8 @@ a.u-link.u-text-hover-grey-90:hover {
         }
         h3
         {
-        font-weight: 400;
-        font-size: 2.25rem;
+        font-weight: 500;
+        font-size: clamp(1.25rem,1.7rem,2.25rem);
         line-height: 1.2;
         margin-top: 20px;
         margin-bottom: 20px;
