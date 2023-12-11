@@ -1,3 +1,4 @@
+import io
 import json
 from django.core.management.base import BaseCommand
 from mainapp.models import ProductCategory, Product, Author, ProductImage, Adds
@@ -10,7 +11,7 @@ JSON_PATH = 'mainapp/fixtures'
 
 
 def load_from_json(file_name):
-    with open(file_name, mode='r', encoding='utf-8') as infile:
+    with io.open(file_name, mode='r', encoding='utf-8') as infile:
         return json.load(infile)
 
 
