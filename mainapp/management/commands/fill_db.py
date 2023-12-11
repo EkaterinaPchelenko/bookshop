@@ -11,7 +11,7 @@ JSON_PATH = 'mainapp/fixtures'
 
 
 def load_from_json(file_name):
-    with io.open(file_name, mode='r', encoding='utf-8') as infile:
+    with open(file_name, mode='r', encoding='utf-8') as infile:
         return json.load(infile)
 
 
