@@ -10,7 +10,7 @@ JSON_PATH = 'mainapp/fixtures'
 
 
 def load_from_json(file_name):
-    with open(file_name, mode='rb', encoding='utf-8') as infile:
+    with open(file_name, mode='r', encoding='utf-8') as infile:
         return json.load(infile)
 
 
@@ -58,13 +58,13 @@ class Command(BaseCommand):
             new_product = Product(**prod)
             new_product.save()
 
-        images = load_from_json('mainapp/fixtures/product_images.json')
-
-        ProductImage.objects.all().delete()
-        for image in images:
-            im = image.get('fields')
-            product = im.get('product')
-            _product = Product.objects.get(id=product)
-            im['product'] = _product
-            new_image = ProductImage(**im)
-            new_image.save()
+        # images = load_from_json('mainapp/fixtures/product_images.json')
+        #
+        # ProductImage.objects.all().delete()
+        # for image in images:
+        #     im = image.get('fields')
+        #     product = im.get('product')
+        #     _product = Product.objects.get(id=product)
+        #     im['product'] = _product
+        #     new_image = ProductImage(**im)
+        #     new_image.save()
