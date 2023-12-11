@@ -15,7 +15,6 @@ def load_from_json(file_name):
 
 
 class Command(BaseCommand):
-    super_user = User.objects.create_superuser('Kate', 'user@bookshop.local', 'bookshop')
 
     def handle(self, *args, **options):
         categories = load_from_json('mainapp/fixtures/categories.json')
