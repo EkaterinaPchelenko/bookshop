@@ -1,6 +1,3 @@
 .gitignore
 db.sqlite3
-mainapp/migrations
-users/migrations
-likes/migrations
 #media
