@@ -1,2 +1,4 @@
 EMAIL_HOST_USER = "katethebee2014@yandex.ru"
 EMAIL_HOST_PASSWORD = "spqpocjwnxuetbrd"
+
+TOKEN = '6893100165:AAEO51Kyum3rE7BHeGmeX_JojT7mJ22GJGI'
